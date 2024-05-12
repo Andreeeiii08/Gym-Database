@@ -20,4 +20,8 @@ installacio_treballador --> id_installacio, id_trabajador
 total aprox: 10 tablas
 
 preguntar mañana:
-- taquillas
+- taquillas --> ¿cómo lo hacemos?
+- ¿Cómo ve qué ciertas instalaciones se dividan por zonas? Las zonas como vesturio y sauna no interesen en la parte de las máquinas
+- Estaría introducir las zonas de salas y zonas de entrenamiento en "Caracteríques" para saber su superfície, sin embargo, en los booleanos aparecerían en "FALSE" duchas y taquillas porque no tiene sentido que estén ahí.
+- ¿Está correcto poner fotos de máquinas y las zonas?
+- ¿Podemos poner fotos de personajes ficticios o generadas por IA en clientes?
