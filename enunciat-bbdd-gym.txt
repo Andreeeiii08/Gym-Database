@@ -1,0 +1,21 @@
+Enunciat de la base de dades:
+
+tablas:
+
+màquines --> ENUM('operativo', 'en mantenimiento', 'inoperativo')
+instal·lacions (salas, solarium, piscina, vestuario, etc)
+trabajadores (* --> subclases)
+*monitor
+*entrenador personal
+*netejador
+
+
+-------
+clients/socis
+classes dirigides
+entrenadors
+
+total aprox:  tablas?
+
+preguntar mañana:
+- taquillas
