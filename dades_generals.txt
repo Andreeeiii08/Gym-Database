@@ -1,0 +1,4 @@
+Nombre del equipo: Team Wonder
+Membres d’equip: Rubén i Andrei
+Nombre de la base de dades: Gym
+Descripció: Volem recopilar informació dels clients matriculats, els treballadors que poden ser tant monitors, entrenadors o equip de neteja. Gestionarem l’inventari de les màquines, instal·lacions i materials. Un monitor tindrà assignada una classe a on participen clients. De cada entrenador, tindrà assignat alguns clients per entrenar.
