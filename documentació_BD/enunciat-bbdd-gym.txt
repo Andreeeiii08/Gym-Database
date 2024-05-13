@@ -8,4 +8,6 @@ Enunciat de la base de dades:
 	
 	Passant als entrenadors personals, aquests poden estar assignat a un client per fer gestionar una rutina d'entrenament personalitzada amb la seva dieta. Important tenir en compte que cada entrenador serà diferent en la seva manera de treballar, per tant, cadascú té una petita introducció o descripció sobre ells mateixos.
 	
-	El personal de neteja pot 
+	El personal de neteja el ser un treballador més i tenir una zona assignada, només volem saber el seu identificador de treballador per saber si pertany a l'equip de neteja.
+	
+	
