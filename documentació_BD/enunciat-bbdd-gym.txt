@@ -1,0 +1,6 @@
+Enunciat de la base de dades:
+
+Posible enunciado:
+Volem gestionar la base de dades d'un gimnàs anomenat "Mesy". Ens interessa recopilar les dades tant dels treballadors i dels clientes, juntament a les instal·lacions i les seves característiques.
+
+Pel que fa als treballadors, podem tenir diferents tipus: monitors, entrenadors personals i equip de neteja (netejadors). Cadascú té diferents tasques i funcions dintre del nostre gimnàs. Per exemple, els monitos s'encarreguen de donar classes dinàdiques als clients. ACABAR.

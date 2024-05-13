@@ -1,0 +1,16 @@
+tablas oficiales:
+
+instal·lacions id instalación, zona(salas, solarium, piscina, vestuario, etc), foto, descripción
+trabajadores id_trabajador, nombre, apellidos, fecha_macimiento, numero_telefono, correo, estudis, salari (* --> subclases)
+*monitor (hace clases), id_trabajador, rol (hacer clases, recepción)
+*entrenador personal (te entrena) --> id_client
+*netejador --> instalación ; cada uno tiene asignada una zona
+clients --> dni PK, nombre, apellido, fecha nacimiento
+matricula --> dni, ubicació, Nº banco, data_alta, preu_matricula, preu_mensual, face, numero_telefono, correu
+classes dirigides --> id_clase, id_clients, hora, nom_Clase, descripció, dia_setmana
+Caracteríques --> m², booleanos entre si tiene duchas, taquillas, fuente de agua, máquina expendedora
+màquines_entrenament --> ENUM('operativo', 'en mantenimiento', 'inoperativo'), peso, grup_muscular, foto?, nombre, peso_max, peso_min 
+
+installacio_treballador --> id_installacio, id_trabajador
+
+total aprox: 10 tablas
