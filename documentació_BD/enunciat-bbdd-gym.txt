@@ -1,6 +1,11 @@
 Enunciat de la base de dades:
 
-Posible enunciado:
-Volem gestionar la base de dades d'un gimnàs anomenat "Mesy". Ens interessa recopilar les dades tant dels treballadors i dels clientes, juntament a les instal·lacions i les seves característiques.
+	Volem gestionar la base de dades d'un únic gimnàs municipal. Ens interessa recopilar les dades tant dels treballadors i dels clientes, juntament a les instal·lacions i les seves característiques.
 
-Pel que fa als treballadors, podem tenir diferents tipus: monitors, entrenadors personals i equip de neteja (netejadors). Cadascú té diferents tasques i funcions dintre del nostre gimnàs. Per exemple, els monitos s'encarreguen de donar classes dinàdiques als clients. ACABAR.
+	Pel que fa als treballadors, podem tenir diferents tipus entre monitors, entrenadors personals i equip de neteja (millor coneguts com "netejadors"). Cadascú té diferents tasques i funcions dintre del nostre gimnàs. Ens interessa recopilar de tots tres els seus DNIs, que serà el seu identificador personal, el seu nom i cognoms, data de naixement, el telèfon, correu electònic, els seus estudis i salari. Cada treballador estarà assignat a una diferent zona del gimnàs.
+
+	Ara bé, a nivell individual, ens interessa recopilar quin rol té cada monitor, ja que pot estar en recepció, vigilant la zona d'entrenament per assegurar-se l'ordre en el gimnàs o fent una classe dirigida. Parlant de les classes dirigides, cal tenir en compte que molts clients poden participar en diferents classes. De les classes ens conèixer l'id de la classe, el monitor qui imparteix aquesta classe, l'hora d'inici, l'hora quan acaba, el dia de la setmana, el nom i una petita descripció.
+	
+	Passant als entrenadors personals, aquests poden estar assignat a un client per fer gestionar una rutina d'entrenament personalitzada amb la seva dieta. Important tenir en compte que cada entrenador serà diferent en la seva manera de treballar, per tant, cadascú té una petita introducció o descripció sobre ells mateixos.
+	
+	El personal de neteja pot 

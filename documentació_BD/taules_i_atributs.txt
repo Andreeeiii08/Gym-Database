@@ -3,7 +3,7 @@ tablas oficiales:
 instal·lacions id instalación, zona(salas, solarium, piscina, vestuario, etc), foto, descripción
 trabajadores id_trabajador, nombre, apellidos, fecha_macimiento, numero_telefono, correo, estudis, salari (* --> subclases)
 *monitor (hace clases), id_trabajador, rol (hacer clases, recepción)
-*entrenador personal (te entrena) --> id_client
+*entrenador personal (te entrena) --> id_client, PRECIO QUE PAGA EL CLIENTE POR ENTRENAMIENTO
 *netejador --> instalación ; cada uno tiene asignada una zona
 clients --> dni PK, nombre, apellido, fecha nacimiento
 matricula --> dni, ubicació, Nº banco, data_alta, preu_matricula, preu_mensual, face, numero_telefono, correu
@@ -14,3 +14,7 @@ màquines_entrenament --> ENUM('operativo', 'en mantenimiento', 'inoperativo'), 
 installacio_treballador --> id_installacio, id_trabajador
 
 total aprox: 10 tablas
+
+COSAS A METER:
+trabajador: jornada laboral (horas semanales), hora jornada inicio, horas fin jornada laboral?¿
+limpiador: PENDIENTE
