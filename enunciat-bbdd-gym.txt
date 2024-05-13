@@ -26,3 +26,7 @@ preguntar mañana:
 - ¿Está correcto poner fotos de máquinas y las zonas?
 - ¿Podemos poner fotos de personajes ficticios o generadas por IA en clientes?
 - Preguntar sobre el diccionario de datos y el HTML.
+
+Diccionari de dades: sembla que es fa desde WorkBench. Genera un HTML que té totes les taules escrites. És un "describe" més ampli i nosaltres hem de insertar coses manualment. Per això és important utilitzar "COMMENT" perquè surt en aquest diccionari.
+
+Longblob → sembla es para ficar imatges. Cuando facis un backup, pesará més la base de dades i hi ha un limit per taula i un altre límit total/global.  
