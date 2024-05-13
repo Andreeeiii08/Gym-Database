@@ -35,3 +35,8 @@ Todos los miembros del equipo tenemos que enviar todos los archivos por igual SI
 
 Hay un PDF que describe toda la tarea, en la portada tiene que tener el nombre del equipo y los miembros, el cual tendrá que enviarlo TODOS LOS MIEMBROS DEL GRUPO.
 *No ha quedado claro que pasará con el informe individual de lo que hemos hecho, ya que ni el profe se acuerda y ha hecho un formulario que cumple la misma función.
+
+Posible enunciado:
+Volem gestionar la base de dades d'un gimnàs anomenat "Mesy". Ens interessa recopilar les dades tant dels treballadors i dels clientes, juntament a les instal·lacions i les seves característiques.
+
+Pel que fa als treballadors, podem tenir diferents tipus: monitors, entrenadors personals i equip de neteja (netejadors). Cadascú té diferents tasques i funcions dintre del nostre gimnàs. Per exemple, els monitos s'encarreguen de donar classes dinàdiques als clients. ACABAR.
