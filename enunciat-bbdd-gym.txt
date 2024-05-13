@@ -30,3 +30,8 @@ preguntar mañana:
 Diccionari de dades: sembla que es fa desde WorkBench. Genera un HTML que té totes les taules escrites. És un "describe" més ampli i nosaltres hem de insertar coses manualment. Per això és important utilitzar "COMMENT" perquè surt en aquest diccionari.
 
 Longblob → sembla es para ficar imatges. Cuando facis un backup, pesará més la base de dades i hi ha un limit per taula i un altre límit total/global.  
+
+Todos los miembros del equipo tenemos que enviar todos los archivos por igual SIN COMPRIMIR. El único zip que se puede admitir son las imagenes o enlace a una carpeta compartida de Drive.
+
+Hay un PDF que describe toda la tarea, en la portada tiene que tener el nombre del equipo y los miembros, el cual tendrá que enviarlo TODOS LOS MIEMBROS DEL GRUPO.
+*No ha quedado claro que pasará con el informe individual de lo que hemos hecho, ya que ni el profe se acuerda y ha hecho un formulario que cumple la misma función.
