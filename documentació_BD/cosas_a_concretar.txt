@@ -1,0 +1,61 @@
+Hemos hablado con el profe sobre nuestras tablas según estaban el día 14.05.2023 en la imagen del Workbench.
+
+Nos ha sugerido tocar las tablas de arriba, las que tienen que ver con las instalaciones, es decir: instalaciones (nos ha aconsejado ponerle un nombre más corto como "zonas", así que a partir de ahora la llamaré así) y características.
+
+Su idea es que sería mejor tener una tabla "zonas" donde pongamos cosas así:
+
+mysql:[root:gym_prova]> SELECT * FROM zones;
++----------------+----------+--------------------------------------------------+
+| id_instalacion | nom_zona | descripcio_zona                                  |
++----------------+----------+--------------------------------------------------+
+|              1 | Piscina  | Diversió per a totes les edats!                  |
+|              2 | Spa      | Gaudeix d'una encantadora tarda relaxant-te!     |
+|              3 | Solarium | Té tumbones per poder relaxar-se davant del sol  |
++----------------+----------+--------------------------------------------------+
+
+Esta es, como se puede apreciar, una base de datos temporal creada con el fin de explicar ideas. Nos ha dicho que creemos una tabla indicando las zonas generales del gym, ya que en un real, no solo hay una cosa de cada uno; pueden haber 3 piscinas, 4 spas y 2 solariums. Por lo tanto, tenemos que crear algo genérico, ya que usaremos esta llave primaria ("id_instalacion", aunque en la base de datos real se llama diferente) para dar carácterísticas de cada sala específica. Nos debería quedar algo así:
+
+mysql:[root:gym_prova]> SELECT * FROM espai;
++----------+----------------+---------------+--------+--------------+----------+---------+----------------+
+| id_espai | id_instalacion | superficie_m2 | dutxes | expendedores | altaveus | miralls | imatge         |
++----------+----------------+---------------+--------+--------------+----------+---------+----------------+
+|        1 |              1 |            23 |      1 |            0 |        1 |       1 | NULL           |
+|        2 |              1 |            30 |      1 |            0 |        0 |       0 | NULL           |
+|        3 |              2 |             5 |      1 |            0 |        1 |       0 | NULL           |
+|        4 |              2 |             5 |      1 |            0 |        1 |       0 | NULL           |
+|        5 |              3 |             5 |      0 |            0 |        0 |       0 | NULL           |
+|        6 |              3 |             5 |      0 |            1 |        1 |       0 | NULL           |
+|        7 |              3 |             5 |      0 |            0 |        1 |       0 | NULL           |
++----------+----------------+---------------+--------+--------------+----------+---------+----------------+
+7 rows in set (0,00 sec)
+
+Aunque este es un ejemplo tonto e incompleto, ya que cada uno debería tener una imagen metida porque cada espacio es diferente al anterior, es una idea similar a la realidad. La creatividad no ha jugado al favor del ejemplo ya que he puesto las mismas cosas todo el rato cambiando los números sin tomarme la molestia de converit los "0" a "false" y los "1" a "true", para lo que quiero explicar me vale.
+
+La idea es que cada espacio es diferente, puede que una piscina (el id_instalacion 1) sea más pequeño que el siguiente, pero este tiene altavoces y el siguiente no; la idea es que partiendo con la misma idea, tengamos datos con pequeñas variacones. Si acabamos usando esta idea, tenemos como base las tablas abajo sin pullir e incompletas.
+
+Otro tema interesante a comentar que me he saltado antes, es que en la tabla "borrable" de las zonas he puesto una pequeña descripción, en la cual es una descripción general que describe las diferentes zonas, sin nada específico. Así mismo, los propios espacios podrían tener diferentes descripciones en función a lo que requiera el momento: a lo mejor a una piscina se le ha roto una luz aquática pero a la otra no, y nos puede interesar recopilar este tipo de información. No es algo que nos hayan pedido pero podría completar aún más la base de datos.
+
+A partir de que tengamos esto arreglado, podemos seguir con los CSVs, que dan mucho trabajo. Es buen momento para recordar que nos ha pedido una base de datos simplificada, en la cual nos podemos deshacer de los elementos no tan importantes. Un posible descarte de un elemento podría ser el limpiador ya que, hasta la fecha, no le hemos encontrado ninguna información única y personal que nos intrese recopilar.
+
+-------
+
+Tablas de prueba usadas que NO son las de la base de datos real. Las dejo aquí por si sirven de alguna guía o ayuda. Puede ser que alguna cosa, relacionalmente esté mal pero que para este archivo no sea necesario que esté correcto.
+
+CREATE TABLE zones (
+	id_instalacion INT PRIMARY KEY AUTO_INCREMENT,
+	nom_zona VARCHAR(50),
+	descripcio_zona VARCHAR(50)
+);
+
+CREATE TABLE espai (
+	id_espai INT PRIMARY KEY AUTO_INCREMENT,
+	id_instalacion INT,
+	superficie_m2 INT,
+	dutxes BOOL,
+	expendedores BOOL,
+	altaveus BOOL,
+	miralls BOOL,
+	imatge longblob,
+	FOREIGN KEY (id_instalacion) REFERENCES zones(id_instalacion)
+);
+
