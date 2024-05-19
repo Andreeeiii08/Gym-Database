@@ -28,14 +28,14 @@ CREATE TABLE Monitors(
 );
 
 CREATE TABLE Zones(
-   Id_instalacio INT PRIMARY KEY AUTO_INCREMENT,
+   Id_zona INT PRIMARY KEY AUTO_INCREMENT,
    Zona_instalacio ENUM('Vestuaris','Saunes','Solàrium','Piscines','Entrenament','Sales') COMMENT 'Aquest ENUM es degut a que el gimnás gestiona les seves instal·lacions dividint-las en zones.',
    Descripcio TEXT COMMENT 'Petita descripció de la zona de la instal·lacio.'
 );
 
 /*Taula interelacion entre Treballadors i Instal·lacions per a assignar en quina zona de instal·lacio es mou el treballador.*/
 CREATE TABLE Treballadors_Zones(
-   Id_instalacio INT PRIMARY KEY,
+   Id_zona INT PRIMARY KEY,
    Id_treballador CHAR(10),
    FOREIGN KEY (Id_Instalacio) REFERENCES Zones (Id_instalacio),
    FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
@@ -43,7 +43,7 @@ CREATE TABLE Treballadors_Zones(
 
 CREATE TABLE Espais(
    Id_espai INT PRIMARY KEY AUTO_INCREMENT,
-   Id_instalacio INT,
+   Id_zona INT,
    Superficie DECIMAL(12,2),
    Dutxes BOOL,
    Taquilles BOOL,
@@ -58,9 +58,6 @@ CREATE TABLE Espais(
 
 CREATE TABLE Clients(
    DNI CHAR(10) PRIMARY KEY,
-   Nom VARCHAR(13),
-   Cognom VARCHAR(27),
-   Data_naixement DATE,
    Entrenador_assignat CHAR COMMENT 'Aqui com hi ha alguns entrenadors assignats a alguns clients es posara la seva ID, en cas de no tindre sera NULL.',
    img_client longblob,
    FOREIGN KEY (Entrenador_assignat) REFERENCES Entrenadors_personals (Id_treballador)
@@ -71,10 +68,10 @@ CREATE TABLE Matricula(
    DNI CHAR(10) PRIMARY KEY,
    Nom VARCHAR(13),
    Cognom VARCHAR(27),
+   Data_naixement DATE,
    Tlf INT(9),
    Correu VARCHAR(29),
    Adreça VARCHAR(60),
-   img_client longblob COMMENT 'Imatge del client.',
    Data_alta DATE COMMENT 'Data en la que el client es dona de alta en el nostre gimnas.',
    Preu_matricula DECIMAL(12,2),
    Preu_mensual DECIMAL(12,2),   
