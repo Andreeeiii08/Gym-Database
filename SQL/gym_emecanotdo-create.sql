@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS gym_emecanotdo;
 USE gym_emecanotdo;
 
 CREATE TABLE Treballadors(
-   Id_treballador CHAR PRIMARY KEY COMMENT 'Esta en CHAR perque al identificador sera un DNI.',
+   Id_treballador CHAR(10) PRIMARY KEY COMMENT 'Esta en CHAR perque al identificador sera un DNI.',
    Nom VARCHAR(55),
    Cognom VARCHAR(55),
    Data_Naixement DATE,
@@ -41,7 +41,7 @@ CREATE TABLE Zones(
 /*Taula interelacion entre Treballadors i Instal·lacions per a assignar en quina zona de instal·lacio es mou el treballador.*/
 CREATE TABLE Treballadors_Zones(
    Id_instalacio INT PRIMARY KEY,
-   Id_treballador CHAR,
+   Id_treballador CHAR(10),
    FOREIGN KEY (Id_Instalacio) REFERENCES Zones (Id_instalacio),
    FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
 );
