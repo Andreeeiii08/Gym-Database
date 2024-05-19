@@ -37,7 +37,7 @@ CREATE TABLE Zones(
 CREATE TABLE Treballadors_Zones(
    Id_zona INT PRIMARY KEY,
    Id_treballador CHAR(10),
-   FOREIGN KEY (Id_Instalacio) REFERENCES Zones (Id_instalacio),
+   FOREIGN KEY (Id_zona) REFERENCES Zones (Id_zona),
    FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE Espais(
    Altaveus BOOL,
    Miralls BOOL,
    img_espai longblob COMMENT 'Imatge per representar cada espai del gimnàs.',
-   FOREIGN KEY (Id_instalacio) REFERENCES Zones (Id_instalacio)
+   FOREIGN KEY (Id_zona) REFERENCES Zones (Id_zona)
 );
 
 CREATE TABLE Clients(
