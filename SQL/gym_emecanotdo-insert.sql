@@ -9,6 +9,11 @@ INTO TABLE Zones FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Zona_instalacio, Descripcio);
 
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/espais.csv'
+INTO TABLE Zones FIELDS TERMINATED BY '\t'
+IGNORE 1 LINES
+();
+
 /*INSERT INTO Espais (Id_instalacio, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, img_espai) VALUES
 (1, 150.00, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, NULL);
 
