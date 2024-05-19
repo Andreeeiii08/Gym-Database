@@ -16,13 +16,13 @@ CREATE TABLE Treballadors(
 )engine=InnoDB;
 
 CREATE TABLE Entrenadors_personals(
-  Id_treballador CHAR PRIMARY KEY,
+  Id_treballador CHAR(10) PRIMARY KEY,
   Descripcio TEXT COMMENT 'Aquí basicament hi haura una breu introducció de com es cada entrenador.',
   FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_Treballador)
 );
 
 CREATE TABLE Monitors(
-   Id_treballador CHAR PRIMARY KEY,
+   Id_treballador CHAR(10) PRIMARY KEY,
    Rol TEXT COMMENT 'En rol explicara una mica la seva funció com a monitor i que es lo que fa diariament.',
    FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
 );
@@ -57,7 +57,7 @@ CREATE TABLE Espais(
 );
 
 CREATE TABLE Clients(
-   DNI CHAR PRIMARY KEY,
+   DNI CHAR(10) PRIMARY KEY,
    Nom VARCHAR(13),
    Cognom VARCHAR(27),
    Data_naixement DATE,
@@ -68,7 +68,7 @@ CREATE TABLE Clients(
 
 /*Els clients tenen la seva matrícula on dona constancia que estan apuntats al nostre gimnás.*/
 CREATE TABLE Matricula(
-   DNI CHAR PRIMARY KEY,
+   DNI CHAR(10) PRIMARY KEY,
    Nom VARCHAR(13),
    Cognom VARCHAR(27),
    Tlf INT(9),
@@ -85,7 +85,7 @@ CREATE TABLE Matricula(
 /*Aqui es mostrara les clases que dirigeixen els monitors.*/
 CREATE TABLE Classes_Dirigides(
    Id_classe INT PRIMARY KEY AUTO_INCREMENT,
-   Id_monitor CHAR,
+   Id_monitor CHAR(10),
    Id_espai INT,
    Hora_inici TIME COMMENT 'Hora en la que inicia la classe.',
    Hora_final TIME COMMENT 'Hora en la que finalitza la classe.',
@@ -98,7 +98,7 @@ CREATE TABLE Classes_Dirigides(
 
 /*Aquesta taula es la tabla interelacio entren la taula 'Client' i la taula 'Classes_Dirigides' básicament servira per donar constancia de quins clients estan apuntats a les classes.*/
 CREATE TABLE Client_Classe(
-   DNI_client CHAR PRIMARY KEY,
+   DNI_client CHAR(10) PRIMARY KEY,
    Id_classe INT,
    FOREIGN KEY (DNI_Client) REFERENCES Clients (DNI),
    FOREIGN KEY (Id_classe) REFERENCES Classes_Dirigides (Id_classe)
