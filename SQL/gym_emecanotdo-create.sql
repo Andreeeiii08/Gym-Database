@@ -15,11 +15,6 @@ CREATE TABLE Treballadors(
    img_treballador longblob
 )engine=InnoDB;
 
-CREATE TABLE Netejadors(
-   Id_treballador CHAR PRIMARY KEY,
-   FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_Treballador)
-);
-
 CREATE TABLE Entrenadors_personals(
   Id_treballador CHAR PRIMARY KEY,
   Descripcio TEXT COMMENT 'Aquí basicament hi haura una breu introducció de com es cada entrenador.',
@@ -34,7 +29,7 @@ CREATE TABLE Monitors(
 
 CREATE TABLE Zones(
    Id_instalacio INT PRIMARY KEY AUTO_INCREMENT,
-   Zona_instalacio ENUM('Vestuaris','Saunes','solàrium','Piscines','Entrenament','Sales') COMMENT 'Aquest ENUM es degut a que el gimnás gestiona les seves instal·lacions dividint-las en zones.',
+   Zona_instalacio ENUM('Vestuaris','Saunes','Solàrium','Piscines','Entrenament','Sales') COMMENT 'Aquest ENUM es degut a que el gimnás gestiona les seves instal·lacions dividint-las en zones.',
    Descripcio TEXT COMMENT 'Petita descripció de la zona de la instal·lacio.'
 );
 
@@ -109,16 +104,21 @@ CREATE TABLE Client_Classe(
    FOREIGN KEY (Id_classe) REFERENCES Classes_Dirigides (Id_classe)
 );
 
-/*Aquesta es la taula de les maquines del gimnas, hi han alguns espais de les zones que consten de maquinaria.*/ 
-CREATE TABLE Maquines_gimnas(
+/*Aquesta es la taula de les maquines del gimnas, hi han alguns espais de les zones que consten de maquinaria. Aquí tenim cada màquina a nivell general*/ 
+CREATE TABLE Maquina(
    Id_espai INT,
    Id_Maquina INT PRIMARY KEY AUTO_INCREMENT,
-   Nom_maquina VARCHAR(55),
    Estat ENUM('Operativa','En manteniment','Inoperativa'),
+   FOREIGN KEY (Id_espai) REFERENCES Espais (Id_espai) 
+);
+
+/*A nivell més específic, cada màquina te petites diferences entre les del mateix tipus.*/
+CREATE TABLE Tipus_maquina(
+   Id_Maquina INT PRIMARY KEY,
+   tipus CHAR(50),
    Pes_maquina DECIMAL(12,2) COMMENT 'Aixó es quant pesa la maquina.',
    Pes_max DECIMAL(12,2) COMMENT 'Pes máxim amb el que es pot treballar amb la máquina.',
    Pes_min DECIMAL(12,2) COMMENT 'Pes mínim amb el que es pot treballar amb la máquina.',
-   Quantitat_maquina INT,
    img_maquina longblob COMMENT 'Imatge de la maquina.',
-   FOREIGN KEY (Id_espai) REFERENCES Espais (Id_espai) 
+   FOREIGN KEY (Id_Maquina) REFERENCES Maquina (Id_Maquina)
 );
