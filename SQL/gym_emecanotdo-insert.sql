@@ -35,3 +35,21 @@ FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 IGNORE 1 LINES
 (DNI, Nom, Cognoms, Correu, Tlf, Adreça, Data_naixement, NºBanc);
+
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/treballadors.csv'
+INTO TABLE Treballadors
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 LINES
+(Id_treballador, Nom, Cognom, Correu, Tlf, @dummy, Data_naixement);
+
+INSERT INTO Monitors (Id_treballador, Rol)
+SELECT Id_treballador, NULL AS Rol
+FROM Treballadors
+LIMIT 22;
+
+INSERT INTO Entrenadors_personals (Id_treballador, Descripcio)
+SELECT Id_treballador, NULL AS Descripcio
+FROM Treballadors
+WHERE Id_treballador NOT IN (SELECT Id_treballador FROM Monitors);
+
