@@ -21,3 +21,17 @@ LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/BORRADOR_TEMPORAL_m
 INTO TABLE Maquines_gimnas FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_espai, Nom_maquina, Estat, Pes_maquina, Pes_max, Pes_min, Quantitat_maquina);
+
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
+INTO TABLE Clients
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 LINES
+(DNI);
+
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
+INTO TABLE Matricula
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 LINES
+(DNI, Nom, Cognoms, Correu, Tlf, Adreça, Data_naixement, NºBanc);

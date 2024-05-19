@@ -67,7 +67,7 @@ CREATE TABLE Clients(
 CREATE TABLE Matricula(
    DNI CHAR(10) PRIMARY KEY,
    Nom VARCHAR(13),
-   Cognom VARCHAR(27),
+   Cognoms VARCHAR(27),
    Data_naixement DATE,
    Tlf INT(9),
    Correu VARCHAR(29),
