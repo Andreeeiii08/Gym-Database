@@ -1,11 +1,32 @@
-Id_instalacio	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min
-1	Cinta de córrer	En manteniment	140.00	110.00	25.00
-2	Màquina el·líptica	Operativa	180.00	130.00	15.00
-3	Mànigues	Inoperativa	90.00	100.00	5.00
-4	Banc de peses	Operativa	160.00	180.00	10.00
-5	Roderes abdominals	Operativa	70.00	90.00	3.00
-6	Stepper	En manteniment	120.00	100.00	20.00
-7	Cadires romanes	Operativa	200.00	150.00	10.00
-8	Mànigues giratòries	En manteniment	110.00	120.00	8.00
-9	Màquina de rem	Operativa	170.00	140.00	25.00
-10	Màquina de glúteos	Inoperativa	150.00	160.00	10.00
+id_espai	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min	Quantitat_maquina	img_maquina
+	Cinta de córrer	Operativa	150	180	0	5	NULL
+	Bicicleta estàtica	Inoperativa	60	150	0	10	NULL
+	El·líptica	En manteniment	80	200	0	3	NULL
+	Máquina de rem	Operativa	75	160	0	4	NULL
+	Premsa de cames	Operativa	200	400	20	2	NULL
+	Pesos lliures	Operativa	20	50	2	100	NULL
+	Màquina de pectorals	Operativa	120	220	5	2	NULL
+	Màquina de bíceps	Operativa	90	150	5	3	NULL
+	Màquina de tríceps	Inoperativa	95	140	5	3	NULL
+	Estació multifunció	En manteniment	250	500	20	1	NULL
+	Màquina de deltoides	Operativa	110	180	10	2	NULL
+	Màquina de dorsals	Operativa	130	200	15	2	NULL
+	Màquina de glutis	Operativa	140	180	10	1	NULL
+	Màquina de quàdriceps	Operativa	100	250	20	3	NULL
+	Màquina de femorals	Operativa	110	230	20	2	NULL
+	Màquina de panxes	En manteniment	50	100	0	2	NULL
+	Màquina de abductors	Operativa	130	200	10	1	NULL
+	Màquina de adductors	Operativa	130	200	10	1	NULL
+	Màquina de gemelos	Operativa	100	160	10	1	NULL
+	Màquina de hiperextensions	Inoperativa	90	140	0	2	NULL
+	Estació de pes mort	Operativa	300	600	50	1	NULL
+	Corda per escalar	Operativa	20	0	0	2	NULL
+	Màquina de boxa	En manteniment	80	0	0	1	NULL
+	Màquina de escalfament	Operativa	30	0	0	2	NULL
+	Màquina de refrigeració	Operativa	100	0	0	1	NULL
+	Banc de pes lliure	Operativa	40	200	5	4	NULL
+	Màquina de flexions	Operativa	50	0	0	3	NULL
+	Escaladora Operativa	Operativa	70	0	2	2	NULL
+	Màquina de resistència	Inoperativa	90	200	5	2	NULL
+	Cinta de marxa	En manteniment	100	0	0	3	NULL
+	Màquina de crossfit	Inoperativa	40	200	5	4	NULL
