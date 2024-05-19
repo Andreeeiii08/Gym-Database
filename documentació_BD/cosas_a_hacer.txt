@@ -1,0 +1,7 @@
+Las cosas que tenemos que hacer hoy:
+
+- Acabar de rematar las tablas y sus relaciones.
+- Relación entre espacios con las clases dirigidas.
+- Cambiar enunciado
+
+maquinas no tienen identificador?
