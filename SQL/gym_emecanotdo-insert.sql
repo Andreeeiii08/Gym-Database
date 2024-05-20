@@ -7,9 +7,9 @@ IGNORE 1 LINES
 (Zona_instalacio, Descripcio);
 
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/espais.csv'
-INTO TABLE Zones FIELDS TERMINATED BY '\t'
+INTO TABLE Espais FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
-();
+(Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio);
 
 /*LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/BORRADOR_TEMPORAL_maquines.csv'
 INTO TABLE Maquines_gimnas FIELDS TERMINATED BY '\t'

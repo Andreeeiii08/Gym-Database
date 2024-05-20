@@ -54,6 +54,7 @@ CREATE TABLE Espais(
    Pantalles BOOL,
    Altaveus BOOL,
    Miralls BOOL,
+   Descripcio TEXT,
    img_espai longblob COMMENT 'Imatge per representar cada espai del gimnàs.',
    FOREIGN KEY (Id_zona) REFERENCES Zones (Id_zona)
 );

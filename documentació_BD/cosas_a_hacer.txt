@@ -5,9 +5,13 @@ Las cosas que tenemos que hacer hoy:
 
 CSV:
 
-- trabajadores 22 monitores; 6 entrenadores (28 en total)
-* dni trabajores con el generador de dnis del Rudy
-- Clases hay que inventarselos
-- Clientes han de ser 100, los dni y codigos bancareos serán generados con generadores
-- los zones csv
+mysql:[root:gym_emecanotdo]> SELECT * FROM Classes_Dirigides;
+Empty set (0,00 sec)
+mysql:[root:gym_emecanotdo]> SELECT * FROM Client_Classe;
+Empty set (0,00 sec)
+mysql:[root:gym_emecanotdo]> SELECT * FROM Maquina;
+Empty set (0,00 sec)
+mysql:[root:gym_emecanotdo]> SELECT * FROM Espais;
+Empty set (0,00 sec)
+
 - maquines falta descripción
