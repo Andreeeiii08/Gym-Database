@@ -47,7 +47,16 @@ source ~/GitHub/Gym-Database/SQL/gym_emecanotdo-insert.sql
 
 /*Eliminem la taula temporal.*/
 DROP TABLE IF EXISTS Espais_temp;
-
+/*Actulitzo la taula espais de manera que si es 0 posara 'No hi ha ' i si posa 1 posara 'Si hi ha'*/
+UPDATE Espais
+SET 
+    Dutxes = CASE WHEN Dutxes THEN 'True' ELSE 'False' END,
+    Taquilles = CASE WHEN Taquilles THEN 'True' ELSE 'False' END,
+    Expendedores = CASE WHEN Expendedores THEN 'True' ELSE 'False' END,
+    Font_aigua = CASE WHEN Font_aigua THEN 'True' ELSE 'False' END,
+    Pantalles = CASE WHEN Pantalles THEN 'True' ELSE 'False' END,
+    Altaveus = CASE WHEN Altaveus THEN 'True' ELSE 'False' END,
+    Miralls = CASE WHEN Miralls THEN 'True' ELSE 'False' END;
 /*LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/BORRADOR_TEMPORAL_maquines.csv'
 INTO TABLE Maquines_gimnas FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
@@ -247,7 +256,7 @@ VALUES
 
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/classes_dirigides.csv'
 INTO TABLE Classes_Dirigides
-FIELDS TERMINATED BY ','
+FIELDS TERMINATED BY '\t'
 ENCLOSED BY '"'
 IGNORE 1 LINES
 (Id_monitor, Id_espai, Hora_inici, Hora_final, Nom_clase, Dia, Descripcio);
