@@ -11,8 +11,7 @@ CREATE TABLE Treballadors(
    tlf INT(9),
    Correu VARCHAR(55),
    Estudis TEXT	,
-   Salari DECIMAL(12,2),
-   img_treballador longblob
+   Salari DECIMAL(12,2)
 )engine=InnoDB;
 
 CREATE TABLE Entrenadors_personals(
@@ -62,7 +61,6 @@ CREATE TABLE Espais(
 CREATE TABLE Clients(
    DNI CHAR(10) PRIMARY KEY,
    Entrenador_assignat INT COMMENT 'Aqui com hi ha alguns entrenadors assignats a alguns clients es posara la seva ID, en cas de no tindre sera NULL.',
-   img_client longblob,
    FOREIGN KEY (Entrenador_assignat) REFERENCES Entrenadors_personals (Id_entrenador) ON DELETE SET NULL
 );
 
@@ -120,6 +118,5 @@ CREATE TABLE Tipus_maquina_estacions(
    Pes_maquina DECIMAL(12,2) COMMENT 'Aixó es quant pesa la maquina.',
    Pes_max DECIMAL(12,2) COMMENT 'Pes máxim amb el que es pot treballar amb la máquina.',
    Pes_min DECIMAL(12,2) COMMENT 'Pes mínim amb el que es pot treballar amb la máquina.',
-   img_maquina longblob COMMENT 'Imatge de la maquina.',
    FOREIGN KEY (Id_Maquina) REFERENCES Maquina_estacions (Id_Maquina)
 );

@@ -1,16 +1,16 @@
 Id_Maquina	id_espai	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min	img_maquina
-A69-1	12	Cinta de córrer	Operativa	60	0	0	NULL
-A69-2	12	Cinta de córrer	Operativa	60	0	0	NULL
-A69-3	12	Cinta de córrer	Operativa	60	0	0	NULL
-A79-1	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
-A79-2	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
-A79-3	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
-A32-1	12	El·líptica	En manteniment	25	0	0	NULL
-A32-2	12	El·líptica	En manteniment	25	0	0	NULL
-A32-3	12	El·líptica	En manteniment	25	0	0	NULL
-A07-1	12	Máquina de rem	Operativa	22,2	0	0	NULL
-A07-2	12	Máquina de rem	Operativa	22,2	0	0	NULL
-A07-3	12	Máquina de rem	Operativa	22,2	0	0	NULL
+G69-1	12	Cinta de córrer	Operativa	60	0	0	NULL
+G69-2	12	Cinta de córrer	Operativa	60	0	0	NULL
+G69-3	12	Cinta de córrer	Operativa	60	0	0	NULL
+G79-1	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
+G79-2	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
+G79-3	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
+G32-1	12	El·líptica	En manteniment	25	0	0	NULL
+G32-2	12	El·líptica	En manteniment	25	0	0	NULL
+G32-3	12	El·líptica	En manteniment	25	0	0	NULL
+G07-1	12	Máquina de rem	Operativa	22,2	0	0	NULL
+G07-2	12	Máquina de rem	Operativa	22,2	0	0	NULL
+G07-3	12	Máquina de rem	Operativa	22,2	0	0	NULL
 B96-1	12	Premsa de cames	Operativa	215,2	200	15	NULL
 B96-2	12	Premsa de cames	Operativa	215,2	200	15	NULL
 B96-3	12	Premsa de cames	Operativa	215,2	200	15	NULL
@@ -80,15 +80,15 @@ C88-3	12	Banc de pes lliure	Operativa	NULL	60	2,5	NULL
 F09-1	12	Màquina de flexions	Operativa	20	0	0	NULL
 F09-2	12	Màquina de flexions	Operativa	20	0	0	NULL
 F09-3	12	Màquina de flexions	Operativa	20	0	0	NULL
-A04-1	12	Escaladora Operativa	Operativa	70	0	0	NULL
-A04-2	12	Escaladora Operativa	Operativa	70	0	0	NULL
-A04-3	12	Escaladora Operativa	Operativa	70	0	0	NULL
-A99-1	12	Màquina de resistència	Inoperativa	90	0	0	NULL
-A99-2	12	Màquina de resistència	Inoperativa	90	0	0	NULL
-A99-3	12	Màquina de resistència	Inoperativa	90	0	0	NULL
-A74-1	12	Cinta de marxa	En manteniment	30	0	0	NULL
-A74-2	12	Cinta de marxa	En manteniment	30	0	0	NULL
-A74-3	12	Cinta de marxa	En manteniment	30	0	0	NULL
-A05-1	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
-A05-2	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
-A05-3	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
+G04-1	12	Escaladora Operativa	Operativa	70	0	0	NULL
+G04-2	12	Escaladora Operativa	Operativa	70	0	0	NULL
+G04-3	12	Escaladora Operativa	Operativa	70	0	0	NULL
+G99-1	12	Màquina de resistència	Inoperativa	90	0	0	NULL
+G99-2	12	Màquina de resistència	Inoperativa	90	0	0	NULL
+G99-3	12	Màquina de resistència	Inoperativa	90	0	0	NULL
+G74-1	12	Cinta de marxa	En manteniment	30	0	0	NULL
+G74-2	12	Cinta de marxa	En manteniment	30	0	0	NULL
+G74-3	12	Cinta de marxa	En manteniment	30	0	0	NULL
+G05-1	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
+G05-2	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
+G05-3	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
