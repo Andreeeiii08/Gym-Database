@@ -111,91 +111,91 @@ FROM Treballadors
 LIMIT 22;
 
 UPDATE Monitors
-SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+SET Rol = 'Fa control dels vestuaris del gimnàs.'
 WHERE DNI_treballador = '05514189P';
 
 UPDATE Monitors
-SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+SET Rol = 'Fa control dels vestuaris del gimnàs.'
 WHERE DNI_treballador = '30105661H';
 
 UPDATE Monitors
-SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+SET Rol = 'Fa control dels vestuaris del gimnàs.'
 WHERE DNI_treballador = '49354886Z';
 
 UPDATE Monitors
-SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+SET Rol = 'Fa control dels vestuaris del gimnàs.'
 WHERE DNI_treballador = '77753405L';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila las saunas.'
+SET Rol = 'Vigila les saunes.'
 WHERE DNI_treballador = '06090311A';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila las saunas.'
+SET Rol = 'Vigila les saunes.'
 WHERE DNI_treballador = '31751799T';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila las saunas.'
+SET Rol = 'Vigila les saunes.'
 WHERE DNI_treballador = '49790137J';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila las saunas.'
+SET Rol = 'Vigila les saunes.'
 WHERE DNI_treballador = '78571815C';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en el solàrium.'
+SET Rol = 'Fa classes en el solàrium.'
 WHERE DNI_treballador = '07219390N';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en el solàrium.'
+SET Rol = 'Fa classes en el solàrium.'
 WHERE DNI_treballador = '33585098S';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en el solàrium.'
+SET Rol = 'Fa classes en el solàrium.'
 WHERE DNI_treballador = '81311320H';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en el solàrium.'
+SET Rol = 'Fa classes en el solàrium.'
 WHERE DNI_treballador = '52696384A';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila la piscina.'
+SET Rol = 'Vigila la securetat en les piscines'
 WHERE DNI_treballador = '07875785X';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en la piscina.'
+SET Rol = 'Fa classes en la piscina.'
 WHERE DNI_treballador = '35597917N';
 
 UPDATE Monitors
-SET Rol = 'Actualmente ejerce clases en la piscina.'
+SET Rol = 'Fa classes en la piscina.'
 WHERE DNI_treballador = '67874490H';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila la piscina.'
+SET Rol = 'Vigila la securetat en les piscines.'
 WHERE DNI_treballador = '82677449Q';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+SET Rol = 'Vigila i fa classes en la zona entrenament.'
 WHERE DNI_treballador = '08176925B';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+SET Rol = 'Vigila i fa classes en la zona entrenament.'
 WHERE DNI_treballador = '36612536D';
 
 UPDATE Monitors
-SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+SET Rol = 'Vigila i fa classes en la zona entrenament.'
 WHERE DNI_treballador = '68324689S';
 
 UPDATE Monitors
-SET Rol = 'Actualmente da clases en sala.'
+SET Rol = 'Fa classes en les sales.'
 WHERE DNI_treballador = '28816250X';
 
 UPDATE Monitors
-SET Rol = 'Actualmente da clases en sala.'
+SET Rol = 'Fa classes en les sales.'
 WHERE DNI_treballador = '36908345S';
 
 UPDATE Monitors
-SET Rol = 'Actualmente da clases en sala.'
+SET Rol = 'Fa classes en les sales.'
 WHERE DNI_treballador = '77564026E';
 
 
@@ -205,30 +205,30 @@ FROM Treballadors
 WHERE DNI_treballador NOT IN (SELECT DNI_treballador FROM Monitors);
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Geraldine Adams Cash - Entrenador de Entrenamiento en Escalada: Elvis es un experto en entrenamiento en escalada, tanto en interiores como en exteriores. Con un profundo conocimiento en técnicas de escalada, fuerza de agarre y entrenamiento de potencia, guía a sus clientes a través de sesiones de escalada seguras y efectivas que mejoran la fuerza, la coordinación y la confianza en sí mismos.'
+SET Descripcio = 'Entrenador especialitzat en escalada, tant en interiors com en exteriors de forma segura per millorar la força i coordinació.'
 WHERE DNI_treballador = '84605514Z';
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Vincent Bean Cooke - Masajista Terapéutico Especializado: Vincent, conocido como Rama, es un masajista terapéutico especializado con experiencia en técnicas de masaje deportivo y rehabilitación. Su habilidad para aliviar la tensión muscular y mejorar la circulación sanguínea lo convierte en un recurso invaluable para aquellos que buscan alivio del dolor y una recuperación más rápida.'
+SET Descripcio = 'Massatgista professional que alivia la tensió muscular i millora la circulació sanguinea amb el seu treball.'
 WHERE DNI_treballador = '86989486J';
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Kitra Nguyen Chang - Entrenador de Entrenamiento en Circuito: Kitra es un especialista en entrenamiento en circuito con experiencia en diseño de programas de entrenamiento eficientes y efectivos. Su enfoque en la variedad, la intensidad y el trabajo en grupo lo convierte en un recurso invaluable para aquellos que buscan resultados rápidos y variados en su rutina de ejercicios.'
+SET Descripcio = 'Experència en diseny de programes de rutina eficients amb resultats ràpids i efectius.'
 WHERE DNI_treballador = '87250359C';
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Wade Davis Velazquez - Entrenador de Entrenamiento de Fuerza: Wade, conocido como Vincent, es un experto en entrenamiento de fuerza y acondicionamiento físico. Con su enfoque en el levantamiento de pesas, la periodización y la progresión del entrenamiento, ayuda a sus clientes a desarrollar fuerza, potencia y resistencia muscular para mejorar su rendimiento atlético y su salud general.'
+SET Descripcio = 'Expert en entrenament de força i acondiconament físic que descaca en el levantament de peçes.'
 WHERE DNI_treballador = '91354962C';
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Xenos Rodgers Delacruz - Coach de Mentalidad y Motivación: Xenos es un coach de mentalidad y motivación que ayuda a sus clientes a superar barreras mentales y alcanzar su máximo potencial. Con su enfoque en el pensamiento positivo, la visualización y el establecimiento de metas, les enseña herramientas y estrategias para cultivar una mentalidad fuerte y resiliente.'
+SET Descripcio = 'Coach especialitzat en mentalitat i motivació que ajuda als clients per arribar al màxim potencia'
 WHERE DNI_treballador = '92348206D';
 
 UPDATE Entrenadors_personals
-SET Descripcio = 'Elvis Randolph Howard - Especialista en Entrenamiento de Resistencia: Elvis, también conocido como Iliana, es una entrenadora experimentada en el ámbito de la resistencia y la fuerza. Con un enfoque en el levantamiento de pesas y el entrenamiento de fuerza, ayuda a sus clientes a alcanzar niveles óptimos de fuerza y acondicionamiento físico.'
+SET Descripcio = 'Especialitzada en resistència i força, amb un enfoc de levantament de força i donar volum corporal.'
 WHERE DNI_treballador = '95379746B';
 
-/*Assigno el entrenadors a les zones de manera manual yo mateix.*/
+/*Assigno els treballadors a les zones de manera manual, només els que estàn en la taula de "Monitors".*/
 INSERT INTO Treballadors_Zones (Id_zona, DNI_treballador)
 VALUES
     (1, '05514189P'),
@@ -261,4 +261,15 @@ ENCLOSED BY '"'
 IGNORE 1 LINES
 (Id_monitor, Id_espai, Hora_inici, Hora_final, Nom_clase, Dia, Descripcio);
 
-
+/*Script aleatori per assignari als clients algunes classes.*/
+INSERT INTO Client_Classe (DNI_client, Id_classe)
+SELECT
+    DNI,
+    Id_classe
+FROM
+    Clients
+JOIN
+    Classes_Dirigides
+ORDER BY
+    RAND()
+LIMIT 222;

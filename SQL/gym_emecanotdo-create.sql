@@ -98,8 +98,9 @@ CREATE TABLE Classes_Dirigides(
 
 /*Aquesta taula es la tabla interelacio entren la taula 'Client' i la taula 'Classes_Dirigides' básicament servira per donar constancia de quins clients estan apuntats a les classes.*/
 CREATE TABLE Client_Classe(
-   DNI_client CHAR(10) PRIMARY KEY,
+   DNI_client CHAR(10),
    Id_classe INT,
+   PRIMARY KEY (DNI_client, Id_classe),
    FOREIGN KEY (DNI_Client) REFERENCES Clients (DNI),
    FOREIGN KEY (Id_classe) REFERENCES Classes_Dirigides (Id_classe)
 );
