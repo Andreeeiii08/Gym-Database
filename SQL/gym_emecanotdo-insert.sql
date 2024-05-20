@@ -61,6 +61,95 @@ SELECT DNI_treballador, NULL AS Rol
 FROM Treballadors
 LIMIT 22;
 
+UPDATE Monitors
+SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+WHERE DNI_treballador = '05514189P';
+
+UPDATE Monitors
+SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+WHERE DNI_treballador = '30105661H';
+
+UPDATE Monitors
+SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+WHERE DNI_treballador = '49354886Z';
+
+UPDATE Monitors
+SET Rol = 'Actualmente haciendo control de vestuarios en el gimnasio.'
+WHERE DNI_treballador = '77753405L';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila las saunas.'
+WHERE DNI_treballador = '06090311A';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila las saunas.'
+WHERE DNI_treballador = '31751799T';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila las saunas.'
+WHERE DNI_treballador = '49790137J';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila las saunas.'
+WHERE DNI_treballador = '78571815C';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en el solàrium.'
+WHERE DNI_treballador = '07219390N';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en el solàrium.'
+WHERE DNI_treballador = '33585098S';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en el solàrium.'
+WHERE DNI_treballador = '81311320H';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en el solàrium.'
+WHERE DNI_treballador = '52696384A';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila la piscina.'
+WHERE DNI_treballador = '07875785X';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en la piscina.'
+WHERE DNI_treballador = '35597917N';
+
+UPDATE Monitors
+SET Rol = 'Actualmente ejerce clases en la piscina.'
+WHERE DNI_treballador = '67874490H';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila la piscina.'
+WHERE DNI_treballador = '82677449Q';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+WHERE DNI_treballador = '08176925B';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+WHERE DNI_treballador = '36612536D';
+
+UPDATE Monitors
+SET Rol = 'Actualmente vigila y ayuda a los clientes en la zona de entrenamiento.'
+WHERE DNI_treballador = '68324689S';
+
+UPDATE Monitors
+SET Rol = 'Actualmente da clases en sala.'
+WHERE DNI_treballador = '28816250X';
+
+UPDATE Monitors
+SET Rol = 'Actualmente da clases en sala.'
+WHERE DNI_treballador = '36908345S';
+
+UPDATE Monitors
+SET Rol = 'Actualmente da clases en sala.'
+WHERE DNI_treballador = '77564026E';
+
+
 INSERT INTO Entrenadors_personals (DNI_treballador, Descripcio)
 SELECT DNI_treballador, NULL AS Descripcio
 FROM Treballadors
