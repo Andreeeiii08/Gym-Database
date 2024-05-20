@@ -273,3 +273,75 @@ JOIN
 ORDER BY
     RAND()
 LIMIT 222;
+
+UPDATE Clients
+SET Entrenador_assignat = '6'
+WHERE DNI = 'Z6650879C';
+
+UPDATE Clients
+SET Entrenador_assignat = '6'
+WHERE DNI = 'Z6578685T';
+
+UPDATE Clients
+SET Entrenador_assignat = '6'
+WHERE DNI = 'Y9707024A';
+
+UPDATE Clients
+SET Entrenador_assignat = '5'
+WHERE DNI = 'X4482664X';
+
+UPDATE Clients
+SET Entrenador_assignat = '5'
+WHERE DNI = '99776218X';
+
+UPDATE Clients
+SET Entrenador_assignat = '5'
+WHERE DNI = '88428356A';
+
+UPDATE Clients
+SET Entrenador_assignat = '4'
+WHERE DNI = '81221692K';
+
+UPDATE Clients
+SET Entrenador_assignat = '4'
+WHERE DNI = '80482715B';
+
+UPDATE Clients
+SET Entrenador_assignat = '4'
+WHERE DNI = '68391900C';
+
+UPDATE Clients
+SET Entrenador_assignat = '3'
+WHERE DNI = '67711844M';
+
+UPDATE Clients
+SET Entrenador_assignat = '3'
+WHERE DNI = '65725288M';
+
+UPDATE Clients
+SET Entrenador_assignat = '3'
+WHERE DNI = '65099652S';
+
+UPDATE Clients
+SET Entrenador_assignat = '2'
+WHERE DNI = '52901724E';
+
+UPDATE Clients
+SET Entrenador_assignat = '2'
+WHERE DNI = '37590422G';
+
+UPDATE Clients
+SET Entrenador_assignat = '2'
+WHERE DNI = '36452461Z';
+
+UPDATE Clients
+SET Entrenador_assignat = '1'
+WHERE DNI = '23253721P';
+
+UPDATE Clients
+SET Entrenador_assignat = '1'
+WHERE DNI = '01687342Q';
+
+UPDATE Clients
+SET Entrenador_assignat = '1'
+WHERE DNI = '64590852K';
