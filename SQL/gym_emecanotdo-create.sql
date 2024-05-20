@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS gym_emecanotdo;
 USE gym_emecanotdo;
 
 CREATE TABLE Treballadors(
-   Id_treballador CHAR(10) PRIMARY KEY COMMENT 'Esta en CHAR perque al identificador sera un DNI.',
+   DNI_treballador CHAR(10) PRIMARY KEY COMMENT 'Esta en CHAR perque al identificador sera un DNI.',
    Nom VARCHAR(55),
    Cognom VARCHAR(55),
    Data_Naixement DATE,
@@ -16,15 +16,17 @@ CREATE TABLE Treballadors(
 )engine=InnoDB;
 
 CREATE TABLE Entrenadors_personals(
-  Id_treballador CHAR(10) PRIMARY KEY,
+  Id_entrenador INT PRIMARY KEY AUTO_INCREMENT,
+  DNI_treballador CHAR(10),
   Descripcio TEXT COMMENT 'Aquí basicament hi haura una breu introducció de com es cada entrenador.',
-  FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_Treballador)
+  FOREIGN KEY (DNI_treballador) REFERENCES Treballadors (DNI_treballador)
 );
 
 CREATE TABLE Monitors(
-   Id_treballador CHAR(10) PRIMARY KEY,
+   Id_monitor INT PRIMARY KEY AUTO_INCREMENT,
+   DNI_treballador CHAR(10),
    Rol TEXT COMMENT 'En rol explicara una mica la seva funció com a monitor i que es lo que fa diariament.',
-   FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
+   FOREIGN KEY (DNI_treballador) REFERENCES Treballadors (DNI_treballador)
 );
 
 CREATE TABLE Zones(
@@ -35,10 +37,10 @@ CREATE TABLE Zones(
 
 /*Taula interelacion entre Treballadors i Instal·lacions per a assignar en quina zona de instal·lacio es mou el treballador.*/
 CREATE TABLE Treballadors_Zones(
-   Id_zona INT PRIMARY KEY,
-   Id_treballador CHAR(10),
+   Id_zona INT,
+   DNI_treballador CHAR(10) PRIMARY KEY,
    FOREIGN KEY (Id_zona) REFERENCES Zones (Id_zona),
-   FOREIGN KEY (Id_treballador) REFERENCES Treballadors (Id_treballador)
+   FOREIGN KEY (DNI_treballador) REFERENCES Treballadors (DNI_treballador)
 );
 
 CREATE TABLE Espais(
@@ -58,9 +60,9 @@ CREATE TABLE Espais(
 
 CREATE TABLE Clients(
    DNI CHAR(10) PRIMARY KEY,
-   Entrenador_assignat CHAR COMMENT 'Aqui com hi ha alguns entrenadors assignats a alguns clients es posara la seva ID, en cas de no tindre sera NULL.',
+   Entrenador_assignat INT COMMENT 'Aqui com hi ha alguns entrenadors assignats a alguns clients es posara la seva ID, en cas de no tindre sera NULL.',
    img_client longblob,
-   FOREIGN KEY (Entrenador_assignat) REFERENCES Entrenadors_personals (Id_treballador)
+   FOREIGN KEY (Entrenador_assignat) REFERENCES Entrenadors_personals (Id_entrenador) ON DELETE SET NULL
 );
 
 /*Els clients tenen la seva matrícula on dona constancia que estan apuntats al nostre gimnás.*/
@@ -82,14 +84,14 @@ CREATE TABLE Matricula(
 /*Aqui es mostrara les clases que dirigeixen els monitors.*/
 CREATE TABLE Classes_Dirigides(
    Id_classe INT PRIMARY KEY AUTO_INCREMENT,
-   Id_monitor CHAR(10),
+   Id_monitor INT,
    Id_espai INT,
    Hora_inici TIME COMMENT 'Hora en la que inicia la classe.',
    Hora_final TIME COMMENT 'Hora en la que finalitza la classe.',
    Nom_clase VARCHAR(25),
    Dia ENUM('Dilluns','Dimarts','Dimecres','Dijous','Divendres','Dissabte','Diumenge'),
    Descripcio TEXT COMMENT 'Una petita introducció de la classe.',
-   FOREIGN KEY (Id_monitor) REFERENCES Monitors ( Id_treballador),
+   FOREIGN KEY (Id_monitor) REFERENCES Monitors (Id_monitor),
    FOREIGN KEY (Id_espai) REFERENCES Espais (Id_espai)
 );
 
