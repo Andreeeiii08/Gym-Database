@@ -108,14 +108,14 @@ CREATE TABLE Client_Classe(
 /*Aquesta es la taula de les maquines del gimnas, hi han alguns espais de les zones que consten de maquinaria. Aquí tenim cada màquina a nivell general*/ 
 CREATE TABLE Maquina_estacions(
    Id_espai INT,
-   Id_Maquina CHAR(3) PRIMARY KEY,
+   Id_Maquina CHAR(5) PRIMARY KEY,
    Estat ENUM('Operativa','En manteniment','Inoperativa'),
    FOREIGN KEY (Id_espai) REFERENCES Espais (Id_espai) 
 );
 
 /*A nivell més específic, cada màquina te petites diferences entre les del mateix tipus.*/
 CREATE TABLE Tipus_maquina_estacions(
-   Id_Maquina CHAR(3) PRIMARY KEY,
+   Id_Maquina CHAR(5) PRIMARY KEY,
    tipus CHAR(50),
    Pes_maquina DECIMAL(12,2) COMMENT 'Aixó es quant pesa la maquina.',
    Pes_max DECIMAL(12,2) COMMENT 'Pes máxim amb el que es pot treballar amb la máquina.',
