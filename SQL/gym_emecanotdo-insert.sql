@@ -351,3 +351,217 @@ LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/maquines.csv'
 INTO TABLE Tipus_maquina_estacions FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_Maquina, @dummy, tipus, @dummy, Pes_maquina, Pes_max, Pes_min);
+
+
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_1.png')
+WHERE Id_espai = 9;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 9 INTO DUMPFILE '/tmp/verify_piscina_1.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_1.png')), 1, 10))
+WHERE Id_espai = 9;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 9 INTO DUMPFILE '/tmp/verify_piscina_1_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_2.png')
+WHERE Id_espai = 10;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 10 INTO DUMPFILE '/tmp/verify_piscina_2.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_2.png')), 1, 10))
+WHERE Id_espai = 10;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 10 INTO DUMPFILE '/tmp/verify_piscina_2_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_3.png')
+WHERE Id_espai = 11;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 11 INTO DUMPFILE '/tmp/verify_piscina_3.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_3.png')), 1, 10))
+WHERE Id_espai = 11;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 11 INTO DUMPFILE '/tmp/verify_ppiscina_3_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_personal_masc.png')
+WHERE Id_espai = 1;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 1 INTO DUMPFILE '/tmp/verify_vestuari_personal_masc.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_personal_masc.png')), 1, 10))
+WHERE Id_espai = 1;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 1 INTO DUMPFILE '/tmp/verify_vestuari_personal_masc_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_personal_fem.png')
+WHERE Id_espai = 2;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 2 INTO DUMPFILE '/tmp/verify_vestuari_personal_fem.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_personal_fem.png')), 1, 10))
+WHERE Id_espai = 2;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 2 INTO DUMPFILE '/tmp/verify_vestuari_vestuari_personal_fem_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_public_masc.png')
+WHERE Id_espai = 3;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 3 INTO DUMPFILE '/tmp/verify_vestuari_public_masc.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_public_masc.png')), 1, 10))
+WHERE Id_espai = 3;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 3 INTO DUMPFILE '/tmp/verify_vestuari_public_masc_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_public_fem.png')
+WHERE Id_espai = 4;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 4 INTO DUMPFILE '/tmp/verify_vestuari_public_fem.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/vestuari_public_fem.png')), 1, 10))
+WHERE Id_espai = 4;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 4 INTO DUMPFILE '/tmp/verify_vestuari_public_fem_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sauna_vapor.png')
+WHERE Id_espai = 5;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 5 INTO DUMPFILE '/tmp/verify_sauna_vapor.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sauna_vapor.png')), 1, 10))
+WHERE Id_espai = 5;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 5 INTO DUMPFILE '/tmp/verify_sauna_vapor_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sauna_seca.png')
+WHERE Id_espai = 6;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 6 INTO DUMPFILE '/tmp/verify_sauna_seca.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sauna_seca.png')), 1, 10))
+WHERE Id_espai = 6;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 6 INTO DUMPFILE '/tmp/verify_sauna_seca_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/solàrium_1.png')
+WHERE Id_espai = 7;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 7 INTO DUMPFILE '/tmp/verify_solàrium_1.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/solàrium_1.png')), 1, 10))
+WHERE Id_espai = 7;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 7 INTO DUMPFILE '/tmp/verify_solàrium_1_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/solàrium_2.png')
+WHERE Id_espai = 8;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 8 INTO DUMPFILE '/tmp/verify_solàrium_2.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/solàrium_2.png')), 1, 10))
+WHERE Id_espai = 8;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 8 INTO DUMPFILE '/tmp/verify_solàrium_2_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/zona_maquinària.png') WHERE Id_espai = 12;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 12 INTO DUMPFILE '/tmp/verify_zona_maquinària.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/zona_maquinària.png')), 1, 10))
+WHERE Id_espai = 12;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 12 INTO DUMPFILE '/tmp/verify_zona_maquinària_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_1.png') WHERE Id_espai = 13;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 13 INTO DUMPFILE '/tmp/verify_sala_1.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_1.png')), 1, 10))
+WHERE Id_espai = 13;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 13 INTO DUMPFILE '/tmp/verify_sala_1_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_2.png') WHERE Id_espai = 14;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 14 INTO DUMPFILE '/tmp/verify_sala_2.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_2.png')), 1, 10))
+WHERE Id_espai = 14;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 14 INTO DUMPFILE '/tmp/verify_sala_2_shortened.png';
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_3.png') WHERE Id_espai = 15;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 15 INTO DUMPFILE '/tmp/verify_sala_3.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_3.png')), 1, 10))
+WHERE Id_espai = 15;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 15 INTO DUMPFILE '/tmp/verify_sala_3_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_4.png') WHERE Id_espai = 16;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 16 INTO DUMPFILE '/tmp/verify_sala_4.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_4.png')), 1, 10))
+WHERE Id_espai = 16;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 16 INTO DUMPFILE '/tmp/verify_sala_4_shortened.png';
+
+/**/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_5.png') WHERE Id_espai = 17;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 17 INTO DUMPFILE '/tmp/verify_sala_5.png';
+
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/sala_5.png')), 1, 10))
+WHERE Id_espai = 17;
+
+SELECT img_espai FROM Espais WHERE Id_espai = 17 INTO DUMPFILE '/tmp/verify_sala_5_shortened.png';
