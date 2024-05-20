@@ -2,6 +2,7 @@ Las cosas que tenemos que hacer hoy:
 
 - Cambiar enunciado: limpiadores fuera porque vienen del ayuntamiento
 - Crear nueva relación de máquinas
+- ¿Convertimos los 0 y 1 en True y False? Creo que con el Bool no podemos.
 
 CSV:
 
@@ -10,8 +11,6 @@ Empty set (0,00 sec)
 mysql:[root:gym_emecanotdo]> SELECT * FROM Client_Classe;
 Empty set (0,00 sec)
 mysql:[root:gym_emecanotdo]> SELECT * FROM Maquina;
-Empty set (0,00 sec)
-mysql:[root:gym_emecanotdo]> SELECT * FROM Espais;
 Empty set (0,00 sec)
 
 - maquines falta descripción

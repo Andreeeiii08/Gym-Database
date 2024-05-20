@@ -1,15 +1,52 @@
-/**Como placeholder, creamos cosas TEMPORALES en las otras tablas para asegurarnos que las máquinas van**/
-
 /*CSV de les zones*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/zones.csv'
 INTO TABLE Zones FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Zona_instalacio, Descripcio);
 
+/*Crear una taula temporar per ficar True i False en la taula d'espais*/
+CREATE TABLE Espais_temp (
+    Id_zona INT,
+    Superficie DECIMAL(12,2),
+    Dutxes VARCHAR(5),
+    Taquilles VARCHAR(5),
+    Expendedores VARCHAR(5),
+    Font_aigua VARCHAR(5),
+    Pantalles VARCHAR(5),
+    Altaveus VARCHAR(5),
+    Miralls VARCHAR(5),
+    Descripcio TEXT,
+    img_espai LONGBLOB
+);
+
+/*Cargar les dades en la taula temporal*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/espais.csv'
-INTO TABLE Espais FIELDS TERMINATED BY '\t'
+INTO TABLE Espais_temp FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio);
+
+/*Intent de convertir els Bools en True/False*/
+INSERT INTO Espais (Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio, img_espai)
+SELECT 
+    Id_zona,
+    Superficie,
+    CASE WHEN Dutxes = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Taquilles = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Expendedores = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Font_aigua = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Pantalles = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Altaveus = '1' THEN TRUE ELSE FALSE END,
+    CASE WHEN Miralls = '1' THEN TRUE ELSE FALSE END,
+    Descripcio,
+    img_espai
+FROM Espais_temp;
+
+/*source ~/GitHub/Gym-Database/SQL/gym_emecanotdo-create.sql
+source ~/GitHub/Gym-Database/SQL/gym_emecanotdo-insert.sql
+*/
+
+/*Eliminem la taula temporal.*/
+DROP TABLE IF EXISTS Espais_temp;
 
 /*LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/BORRADOR_TEMPORAL_maquines.csv'
 INTO TABLE Maquines_gimnas FIELDS TERMINATED BY '\t'
@@ -32,6 +69,7 @@ SET Entrenador_assignat = (
 WHERE DNI = 'Z6650879C';
 
 
+
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
 INTO TABLE Matricula
 FIELDS TERMINATED BY ','
@@ -39,6 +77,8 @@ ENCLOSED BY '"'
 IGNORE 1 LINES
 (DNI, Nom, Cognoms, Correu, Tlf, Adreça, Data_naixement, NºBanc);
 
+UPDATE Matricula SET Preu_matricula = 80.00;
+UPDATE Matricula SET Preu_mensual = 32.98;
 UPDATE Matricula SET Preu_matricula = 80.00;
 UPDATE Matricula SET Preu_mensual = 32.98;
 
@@ -205,5 +245,11 @@ VALUES
     (3, '81311320H'),
     (4, '82677449Q');
 
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/classes_dirigides.csv'
+INTO TABLE Classes_Dirigides
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+IGNORE 1 LINES
+(Id_monitor, Id_espai, Hora_inici, Hora_final, Nom_clase, Dia, Descripcio);
 
 

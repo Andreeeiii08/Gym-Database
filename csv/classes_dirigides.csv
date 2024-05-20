@@ -1,0 +1,46 @@
+Id_monitor	Id_espai	Hora_inici	Hora_final	Nom_clase	Dia	Descripcio
+3	7	13:00:00	14:00:00	Ioga	Dilluns	Moviment i respiració per equilibrar cos i ment
+3	8	14:30:00	15:30:00	Pilates	Dimarts	Exercicis controlats per a força i flexibilitat
+3	8	16:00:00	17:00:00	Pilates	Dijous	Exercicis controlats per a força i flexibilitat
+3	8	17:30:00	18:30:00	Pilates	Divendres	Exercicis controlats per a força i flexibilitat
+3	7	19:00:00	20:00:00	Ioga	Dissabte	Moviment i respiració per equilibrar cos i ment
+6	13	09:00:00	10:00:00	Cardio dance	Dilluns	Una combinació d'exercicis de dansa i cardiovasculars per a un entrenament eficent.
+6	14	10:30:00	11:30:00	Cardio dance	Dimarts	Una combinació d'exercicis de dansa i cardiovasculars per a un entrenament eficent.
+6	15	12:00:00	13:00:00	Zumba	Dijous	Balla i posa't en forma amb ritmes llatins en una sessió energètica.
+6	16	13:30:00	14:30:00	Zumba	Divendres	Balla i posa't en forma amb ritmes llatins en una sessió energètica.
+6	17	15:00:00	16:00:00	Zumba	Dissabte	Balla i posa't en forma amb ritmes llatins en una sessió energètica.
+9	8	10:00:00	11:00:00	Pilates	Dilluns	Exercicis controlats per a força i flexibilitat
+9	7	11:30:00	12:30:00	Ioga	Dimarts	Moviment i respiració per equilibrar cos i ment
+9	7	13:00:00	14:00:00	Ioga	Dijous	Moviment i respiració per equilibrar cos i ment
+9	7	14:30:00	15:30:00	Ioga	Divendres	Moviment i respiració per equilibrar cos i ment
+9	8	16:00:00	17:00:00	Pilates	Dissabte	Exercicis controlats per a força i flexibilitat
+10	9	09:00:00	10:00:00	Natació per a pricipants	Dilluns	Aprèn habilitats bàsiques de natació i millora la confiança a l'aigua.
+10	10	10:30:00	11:30:00	Natació avançada	Dimarts	Perfecciona tècniques de natació i incrementa la resistència a l'aigua.
+10	9	12:00:00	13:00:00	Natació per a pricipants	Dijous	Aprèn habilitats bàsiques de natació i millora la confiança a l'aigua.
+10	10	13:30:00	14:30:00	Natació avançada	Divendres	Perfecciona tècniques de natació i incrementa la resistència a l'aigua.
+10	10	15:00:00	16:00:00	Natació avançada	Dissabte	Clase dirigida en la piscina gran número 1.
+12	13	08:00:00	09:00:00	Tonificació total	Dilluns	Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.
+12	14	09:30:00	10:30:00	Tonificació total	Dimarts	Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.
+12	15	11:00:00	12:00:00	Tonificació total	Dijous	Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.
+12	16	17:00:00	18:00:00	Circuit de força	Dissabte	Rotacions ràpides d'exercicis de força per treballar el cos de manera eficient.
+12	17	14:00:00	15:00:00	Circuit de força	Dissabte	Rotacions ràpides d'exercicis de força per treballar el cos de manera eficient.
+15	7	09:00:00	10:00:00	Meditació	Dilluns	Calma mental i reducció d'estrès amb atenció plena.
+15	7	10:30:00	11:30:00	Meditació	Dimarts	Calma mental i reducció d'estrès amb atenció plena.
+15	8	12:00:00	13:00:00	Stretching	Dijous	Flexibilitat i relaxació muscular.
+15	8	13:30:00	14:30:00	Stretching	Divendres	Flexibilitat i relaxació muscular.
+15	7	15:00:00	16:00:00	Meditació	Dissabte	Calma mental i reducció d'estrès amb atenció plena.
+16	11	09:00:00	10:00:00	Aigua-gym	Dilluns	Exercicis de baix impacte a l'aigua per millorar la força i la resistència muscular.
+16	11	10:30:00	11:30:00	Aigua-dança	Dimarts	Balla al ritme de la música mentre fas exercici a l'aigua per mantenir-se actiu.
+16	11	12:00:00	13:00:00	Aigua-dança	Dijous	Balla al ritme de la música mentre fas exercici a l'aigua per mantenir-se actiu.
+16	11	13:30:00	14:30:00	Esport aquàtic	Divendres	Activitats esportives  realitzades a l'aigua per millorar la forma física i la coordinació.
+16	11	15:00:00	16:00:00	Esport aquàtic	Dissabte	Activitats esportives  realitzades a l'aigua per millorar la forma física i la coordinació.
+18	13	08:00:00	09:00:00	Core i Estabilitat	Dilluns	Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.
+18	14	09:30:00	10:30:00	Tonificació Express	Dimarts	Exercicis de tonificació intensa per a tot el cos.
+18	15	11:00:00	12:00:00	Tonificació Express	Dijous	Exercicis de tonificació intensa per a tot el cos.
+18	16	12:30:00	13:30:00	Core i Estabilitat	Divendres	Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.
+18	17	14:00:00	15:00:00	Core i Estabilitat	Dissabte	Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.
+21	8	08:00:00	09:00:00	Meditació	Dilluns	Calma mental i reducció d'estrès amb atenció plena.
+21	8	09:30:00	10:30:00	Meditació	Dimarts	Calma mental i reducció d'estrès amb atenció plena.
+21	8	11:00:00	12:00:00	Meditació	Dijous	Calma mental i reducció d'estrès amb atenció plena.
+21	7	12:30:00	13:30:00	Stretching	Divendres	Flexibilitat i relaxació muscular.
+21	7	14:00:00	15:00:00	Stretching	Dissabte	Flexibilitat i relaxació muscular.
