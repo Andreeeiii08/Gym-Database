@@ -10,7 +10,7 @@ CREATE TABLE Treballadors(
    Data_Naixement DATE,
    tlf INT(9),
    Correu VARCHAR(55),
-   Estudis VARCHAR(100),
+   Estudis TEXT	,
    Salari DECIMAL(12,2),
    img_treballador longblob
 )engine=InnoDB;
