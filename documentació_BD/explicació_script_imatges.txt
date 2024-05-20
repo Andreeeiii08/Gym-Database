@@ -1,0 +1,27 @@
+Cal seguir aquests pasos per poder tenir imatges longblob en SQL: 
+
+1. Primer ens asegurem que el directori "/var/lib/mysql/gym_emecanotdo/" no existeix. Si existeix cal fer un "rm -rf gym_emecanotdo desde /var/lib/mysql" i que no hi ha cap foto relacionat amb els espais del gimnàs em "/tmp".
+2. Executar el script "gym_emecanotdo-create.sql".
+3. Ens anem a "/var/lib/mysql/gym_emecanotdo" i executem "sudo cp -r /home/usuari/GitHub/Gym-Database/imatges/espais /var/lib/mysql/gym_emecanotdo/"
+4. Donem aquests permisos: "sudo chown -R mysql:mysql /var/lib/mysql/gym_emecanotdo/espais"
+5. Executar el script "gym_emecanotdo-insert.sql".
+6. Comprovar resultats: "SELECT * FROM Espais;" Cal tenir en compte que el DUMPFILE truca tots els resultats de la mateixa manera.
+7. Comprovar arxius locales en "/tmp". Per a cada espai trobarem: "verify_espai.png" (que s'ha de poder obrir i visualitzar) i "verify_espai_shortened.png" (no se podrá abrir)
+8. Restaurem els permisos que teniem abans: "sudo chown -R mysql:mysql /var/lib/mysql/gym_emecanotdo/espais"
+
+Aquestes són les comandes necessàries per fer les imatges longblob en SQL. Nosaltres ho hem fet en el "gym_emecanotdo-insert.sql" a final de tot.
+
+/*Carrega de imatges en el MySQL - va al final del gym_emecanotdo-insert.sql.*/
+UPDATE Espais
+SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/espai.png') WHERE Id_espai = X;
+
+/*Comprovem que la imatge s'ha carregar correctament, per tant, ho extraem per poder veure-la en el sistema operatiu.*/
+SELECT img_espai FROM Espais WHERE Id_espai = X INTO DUMPFILE '/tmp/verify_espai.png';
+
+/*La imatge s'ha carregat però ha quedat una cadena de text molt llarga. Per simplificar la vista, ho convertim a una cadena de text hexadecimal de 10 caràcters*/
+UPDATE Espais
+SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/espai.png')), 1, 10))
+WHERE Id_espai = X;
+
+/*Hem cortat la cadena del codi de la imatge, per tant, ja no es pot llegir. Amb aquest arxiu ho comprovem, ja que no es pot obrir.*/
+SELECT img_espai FROM Espais WHERE Id_espai = X INTO DUMPFILE '/tmp/verify_espai_shortened.png';
