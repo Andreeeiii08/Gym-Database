@@ -21,7 +21,7 @@ CREATE TABLE Espais_temp (
 
 /*Cargar les dades en la taula temporal*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/espais.csv'
-INTO TABLE Espais_temp FIELDS TERMINATED BY '\t'
+INTO TABLE Espais FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio);
 
@@ -57,10 +57,6 @@ SET
     Pantalles = CASE WHEN Pantalles THEN 'True' ELSE 'False' END,
     Altaveus = CASE WHEN Altaveus THEN 'True' ELSE 'False' END,
     Miralls = CASE WHEN Miralls THEN 'True' ELSE 'False' END;
-/*LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/BORRADOR_TEMPORAL_maquines.csv'
-INTO TABLE Maquines_gimnas FIELDS TERMINATED BY '\t'
-IGNORE 1 LINES
-(Id_espai, Nom_maquina, Estat, Pes_maquina, Pes_max, Pes_min, Quantitat_maquina);*/
 
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
 INTO TABLE Clients
@@ -345,3 +341,13 @@ WHERE DNI = '01687342Q';
 UPDATE Clients
 SET Entrenador_assignat = '1'
 WHERE DNI = '64590852K';
+
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/maquines.csv'
+INTO TABLE Maquina_estacions FIELDS TERMINATED BY '\t'
+IGNORE 1 LINES
+(Id_Maquina, Id_espai, @dummy, Estat);
+
+LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/maquines.csv'
+INTO TABLE Tipus_maquina_estacions FIELDS TERMINATED BY '\t'
+IGNORE 1 LINES
+(Id_Maquina, @dummy, tipus, @dummy, Pes_maquina, Pes_max, Pes_min);
