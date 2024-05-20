@@ -1,18 +1,18 @@
 Id_zona	Superficie	Dutxes	Taquilles	Expendedores	Font_aigua	Pantalles	Altaveus	Miralls	Descripcio	img_espai
-1	40	1	1	0	1	0	1	1	Vesturis pel personal  masculí del gimnàs.	
-1	40	1	1	0	1	0	1	1	Vesturis pel personal  femení del gimnàs.	
-1	100	1	1	0	1	0	1	1	Vesturis pel socis masculins.	
-1	100	1	1	0	1	0	1	1	Vesturis per les socies femenines.	
-2	20	0	0	1	1	0	1	1	Sauna gran per 10 persones amb vapor.	
-2	10	0	0	0	1	1	1	1	Sauna petita per 5 persones sense vapor.	
-3	10	0	0	0	0	0	1	1	Solàrium de l’est del gimnàs.	
-3	15	0	0	0	0	0	1	1	Solàrium de l’oest del gimnàs.	
-4	100	1	0	0	0	1	1	1	Piscina gran número 1.	
-4	120	1	0	0	0	1	1	1	Piscina gran número 2.	
-4	60	1	0	0	0	0	1	1	Piscina petita per tot el públic.	
-5	500	0	1	1	1	1	1	1	Aquest espai per maquinària.	
-6	50	0	0	0	1	1	1	1	Espai cerrat número 1 per fer classes dirigides.	
-6	60	0	0	1	1	0	1	1	Espai cerrat número 2 per fer classes dirigides.	
-6	40	0	0	0	0	1	1	1	Espai cerrat número 3 per fer classes dirigides.	
-6	45	0	0	0	1	1	1	1	Espai cerrat número 4 per fer classes dirigides.	
-6	55	0	0	0	0	0	1	1	Espai cerrat número 5 per fer classes dirigides.	
+1	40	Disponible	Disponible	No disponible	Disponible	No disponible	Disponible	Disponible	Vesturis pel personal  masculí del gimnàs.	
+1	40	Disponible	Disponible	No disponible	Disponible	No disponible	Disponible	Disponible	Vesturis pel personal  femení del gimnàs.	
+1	100	Disponible	Disponible	No disponible	Disponible	No disponible	Disponible	Disponible	Vesturis pel socis masculins.	
+1	100	Disponible	Disponible	No disponible	Disponible	No disponible	Disponible	Disponible	Vesturis per les socies femenines.	
+2	20	No disponible	No disponible	Disponible	Disponible	No disponible	Disponible	Disponible	Sauna gran per 10 persones amb vapor.	
+2	10	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Disponible	Sauna petita per 5 persones sense vapor.	
+3	10	No disponible	No disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Solàrium de l’est del gimnàs.	
+3	15	No disponible	No disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Solàrium de l’oest del gimnàs.	
+4	100	Disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Piscina gran número 1.	
+4	120	Disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Piscina gran número 2.	
+4	60	Disponible	No disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Piscina petita per tot el públic.	
+5	500	No disponible	Disponible	Disponible	Disponible	Disponible	Disponible	Disponible	Aquest espai per maquinària.	
+6	50	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Disponible	Espai cerrat número 1 per fer classes dirigides.	
+6	60	No disponible	No disponible	Disponible	Disponible	No disponible	Disponible	Disponible	Espai cerrat número 2 per fer classes dirigides.	
+6	40	No disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Espai cerrat número 3 per fer classes dirigides.	
+6	45	No disponible	No disponible	No disponible	Disponible	Disponible	Disponible	Disponible	Espai cerrat número 4 per fer classes dirigides.	
+6	55	No disponible	No disponible	No disponible	No disponible	No disponible	Disponible	Disponible	Espai cerrat número 5 per fer classes dirigides.	

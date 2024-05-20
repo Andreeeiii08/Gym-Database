@@ -1,18 +1,18 @@
 Id_Maquina	id_espai	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min	img_maquina
 G69-1	12	Cinta de córrer	Operativa	60	0	0	NULL
-G69-2	12	Cinta de córrer	Operativa	60	0	0	NULL
+G69-2	12	Cinta de córrer	En manteniment	60	0	0	NULL
 G69-3	12	Cinta de córrer	Operativa	60	0	0	NULL
 G79-1	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
-G79-2	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
-G79-3	12	Bicicleta estàtica	Inoperativa	19	0	0	NULL
+G79-2	12	Bicicleta estàtica	Operativa	19	0	0	NULL
+G79-3	12	Bicicleta estàtica	Operativa	19	0	0	NULL
 G32-1	12	El·líptica	En manteniment	25	0	0	NULL
-G32-2	12	El·líptica	En manteniment	25	0	0	NULL
-G32-3	12	El·líptica	En manteniment	25	0	0	NULL
+G32-2	12	El·líptica	Operativa	25	0	0	NULL
+G32-3	12	El·líptica	Operativa	25	0	0	NULL
 G07-1	12	Máquina de rem	Operativa	22,2	0	0	NULL
 G07-2	12	Máquina de rem	Operativa	22,2	0	0	NULL
 G07-3	12	Máquina de rem	Operativa	22,2	0	0	NULL
 B96-1	12	Premsa de cames	Operativa	215,2	200	15	NULL
-B96-2	12	Premsa de cames	Operativa	215,2	200	15	NULL
+B96-2	12	Premsa de cames	En manteniment	215,2	200	15	NULL
 B96-3	12	Premsa de cames	Operativa	215,2	200	15	NULL
 C12-1	12	Pesos lliures	Operativa	NULL	60	2.5	NULL
 C12-2	12	Pesos lliures	Operativa	NULL	60	2.5	NULL
@@ -27,15 +27,15 @@ D33-1	12	Màquina de tríceps	Inoperativa	95	80	5	NULL
 D33-2	12	Màquina de tríceps	Inoperativa	95	80	5	NULL
 D33-3	12	Màquina de tríceps	Inoperativa	95	80	5	NULL
 E12-1	12	Estació multifunció	En manteniment	250	100	5	NULL
-E12-2	12	Estació multifunció	En manteniment	250	100	5	NULL
-E12-3	12	Estació multifunció	En manteniment	250	100	5	NULL
+E12-2	12	Estació multifunció	Operativa	250	100	5	NULL
+E12-3	12	Estació multifunció	Operativa	250	100	5	NULL
 D23-1	12	Màquina de deltoides	Operativa	110	60	2.5	NULL
 D23-2	12	Màquina de deltoides	Operativa	110	60	2.5	NULL
-D23-3	12	Màquina de deltoides	Operativa	110	60	2.5	NULL
+D23-3	12	Màquina de deltoides	En manteniment	110	60	2.5	NULL
 D01-1	12	Màquina de dorsals	Operativa	130	80	5	NULL
 D01-2	12	Màquina de dorsals	Operativa	130	80	5	NULL
 D01-3	12	Màquina de dorsals	Operativa	130	80	5	NULL
-B22-1	12	Màquina de glutis	Operativa	140	60	5	NULL
+B22-1	12	Màquina de glutis	Inoperativa	140	60	5	NULL
 B22-2	12	Màquina de glutis	Operativa	140	60	5	NULL
 B22-3	12	Màquina de glutis	Operativa	140	60	5	NULL
 B12-1	12	Màquina de quàdriceps	Operativa	100	100	5	NULL
@@ -44,36 +44,36 @@ B12-3	12	Màquina de quàdriceps	Operativa	100	100	5	NULL
 B98-1	12	Màquina de femorals	Operativa	110	100	5	NULL
 B98-2	12	Màquina de femorals	Operativa	110	100	5	NULL
 B98-3	12	Màquina de femorals	Operativa	110	100	5	NULL
-D44-1	12	Màquina de panxes	En manteniment	50	60	5	NULL
+D44-1	12	Màquina de panxes	Inoperativa	50	60	5	NULL
 D44-2	12	Màquina de panxes	En manteniment	50	60	5	NULL
-D44-3	12	Màquina de panxes	En manteniment	50	60	5	NULL
+D44-3	12	Màquina de panxes	Operativa	50	60	5	NULL
 B32-1	12	Màquina d'abductors	Operativa	130	60	5	NULL
 B32-2	12	Màquina d'abductors	Operativa	130	60	5	NULL
 B32-3	12	Màquina d'abductors	Operativa	130	60	5	NULL
 B34-1	12	Màquina d'adductors	Operativa	130	60	5	NULL
 B34-2	12	Màquina d'adductors	Operativa	130	60	5	NULL
-B34-3	12	Màquina d'adductors	Operativa	130	60	5	NULL
+B34-3	12	Màquina d'adductors	En manteniment	130	60	5	NULL
 B01-1	12	Màquina de gemelos	Operativa	100	120	10	NULL
 B01-2	12	Màquina de gemelos	Operativa	100	120	10	NULL
 B01-3	12	Màquina de gemelos	Operativa	100	120	10	NULL
-B02-1	12	Màquina d’hiperextensions	Inoperativa	90	80	5	NULL
+B02-1	12	Màquina d’hiperextensions	Operativa	90	80	5	NULL
 B02-2	12	Màquina d’hiperextensions	Inoperativa	90	80	5	NULL
-B02-3	12	Màquina d’hiperextensions	Inoperativa	90	80	5	NULL
+B02-3	12	Màquina d’hiperextensions	Operativa	90	80	5	NULL
 C22-1	12	Estació de pes mort	Operativa	300	250	15	NULL
-C22-2	12	Estació de pes mort	Operativa	300	250	15	NULL
+C22-2	12	Estació de pes mort	Inoperativa	300	250	15	NULL
 C22-3	12	Estació de pes mort	Operativa	300	250	15	NULL
 F69-1	12	Corda per escalar	Operativa	4	0	0	NULL
 F69-2	12	Corda per escalar	Operativa	4	0	0	NULL
 F69-3	12	Corda per escalar	Operativa	4	0	0	NULL
 F77-1	12	Màquina de boxa	En manteniment	8	0	0	NULL
-F77-2	12	Màquina de boxa	En manteniment	8	0	0	NULL
-F77-3	12	Màquina de boxa	En manteniment	8	0	0	NULL
+F77-2	12	Màquina de boxa	Operativa	8	0	0	NULL
+F77-3	12	Màquina de boxa	Operativa	8	0	0	NULL
 F12-1	12	Màquina de escalfament	Operativa	40	0	0	NULL
 F12-2	12	Màquina de escalfament	Operativa	40	0	0	NULL
 F12-3	12	Màquina de escalfament	Operativa	40	0	0	NULL
 E99-1	12	Màquina de refrigeració	Operativa	60	0	0	NULL
 E99-2	12	Màquina de refrigeració	Operativa	60	0	0	NULL
-E99-3	12	Màquina de refrigeració	Operativa	60	0	0	NULL
+E99-3	12	Màquina de refrigeració	Inoperativa	60	0	0	NULL
 C88-1	12	Banc de pes lliure	Operativa	NULL	60	2,5	NULL
 C88-2	12	Banc de pes lliure	Operativa	NULL	60	2,5	NULL
 C88-3	12	Banc de pes lliure	Operativa	NULL	60	2,5	NULL
@@ -87,8 +87,8 @@ G99-1	12	Màquina de resistència	Inoperativa	90	0	0	NULL
 G99-2	12	Màquina de resistència	Inoperativa	90	0	0	NULL
 G99-3	12	Màquina de resistència	Inoperativa	90	0	0	NULL
 G74-1	12	Cinta de marxa	En manteniment	30	0	0	NULL
-G74-2	12	Cinta de marxa	En manteniment	30	0	0	NULL
-G74-3	12	Cinta de marxa	En manteniment	30	0	0	NULL
-G05-1	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
-G05-2	12	Màquina de crossfit	Inoperativa	30	0	0	NULL
+G74-2	12	Cinta de marxa	Operativa	30	0	0	NULL
+G74-3	12	Cinta de marxa	Operativa	30	0	0	NULL
+G05-1	12	Màquina de crossfit	Operativa	30	0	0	NULL
+G05-2	12	Màquina de crossfit	Operativa	30	0	0	NULL
 G05-3	12	Màquina de crossfit	Inoperativa	30	0	0	NULL

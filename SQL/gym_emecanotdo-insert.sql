@@ -4,60 +4,13 @@ INTO TABLE Zones FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Zona_instalacio, Descripcio);
 
-/*Crear una taula temporar per ficar True i False en la taula d'espais*/
-CREATE TABLE Espais_temp (
-    Id_zona INT,
-    Superficie DECIMAL(12,2),
-    Dutxes VARCHAR(5),
-    Taquilles VARCHAR(5),
-    Expendedores VARCHAR(5),
-    Font_aigua VARCHAR(5),
-    Pantalles VARCHAR(5),
-    Altaveus VARCHAR(5),
-    Miralls VARCHAR(5),
-    Descripcio TEXT,
-    img_espai LONGBLOB
-);
-
-/*Cargar les dades en la taula temporal*/
+/*Carreguem les dades de la taula d'espais. De moment, no carreguem les imatges ja que es farà a final de tot.*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/espais.csv'
 INTO TABLE Espais FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio);
 
-/*Intent de convertir els Bools en True/False*/
-INSERT INTO Espais (Id_zona, Superficie, Dutxes, Taquilles, Expendedores, Font_aigua, Pantalles, Altaveus, Miralls, Descripcio, img_espai)
-SELECT 
-    Id_zona,
-    Superficie,
-    CASE WHEN Dutxes = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Taquilles = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Expendedores = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Font_aigua = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Pantalles = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Altaveus = '1' THEN TRUE ELSE FALSE END,
-    CASE WHEN Miralls = '1' THEN TRUE ELSE FALSE END,
-    Descripcio,
-    img_espai
-FROM Espais_temp;
-
-/*source ~/GitHub/Gym-Database/SQL/gym_emecanotdo-create.sql
-source ~/GitHub/Gym-Database/SQL/gym_emecanotdo-insert.sql
-*/
-
-/*Eliminem la taula temporal.*/
-DROP TABLE IF EXISTS Espais_temp;
-/*Actulitzo la taula espais de manera que si es 0 posara 'No hi ha ' i si posa 1 posara 'Si hi ha'*/
-UPDATE Espais
-SET 
-    Dutxes = CASE WHEN Dutxes THEN 'True' ELSE 'False' END,
-    Taquilles = CASE WHEN Taquilles THEN 'True' ELSE 'False' END,
-    Expendedores = CASE WHEN Expendedores THEN 'True' ELSE 'False' END,
-    Font_aigua = CASE WHEN Font_aigua THEN 'True' ELSE 'False' END,
-    Pantalles = CASE WHEN Pantalles THEN 'True' ELSE 'False' END,
-    Altaveus = CASE WHEN Altaveus THEN 'True' ELSE 'False' END,
-    Miralls = CASE WHEN Miralls THEN 'True' ELSE 'False' END;
-
+/*Carregant les dades dels clients; només els DNI perquè després assignem els entrenadors manualment amb un insert. Més informació està en la taula "Matricula".*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
 INTO TABLE Clients
 FIELDS TERMINATED BY ','
@@ -65,16 +18,7 @@ ENCLOSED BY '"'
 IGNORE 1 LINES
 (DNI);
 
-UPDATE Clients
-SET Entrenador_assignat = (
-    SELECT Id_entrenador
-    FROM Entrenadors_personals
-    WHERE Id_entrenador = '4'
-)
-WHERE DNI = 'Z6650879C';
-
-
-
+/*Carreguem les dades de matrícula a on hi ha més informació.*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/clients.csv'
 INTO TABLE Matricula
 FIELDS TERMINATED BY ','
@@ -82,15 +26,15 @@ ENCLOSED BY '"'
 IGNORE 1 LINES
 (DNI, Nom, Cognoms, Correu, Tlf, Adreça, Data_naixement, NºBanc);
 
-UPDATE Matricula SET Preu_matricula = 80.00;
-UPDATE Matricula SET Preu_mensual = 32.98;
+/*Actualitzem el preu de matrícula i el preu mensual.*/
 UPDATE Matricula SET Preu_matricula = 80.00;
 UPDATE Matricula SET Preu_mensual = 32.98;
 
-/*https://stackoverflow.com/questions/34281905/how-do-you-update-an-existing-date-to-a-random-date-in-a-range*/
+/*Per fer això, hem consultat aquesta pàgina web per aleatoritzar les dades: https://stackoverflow.com/questions/34281905/how-do-you-update-an-existing-date-to-a-random-date-in-a-range*/
 UPDATE Matricula
 SET Data_alta = DATE_ADD('2022-01-01', INTERVAL RAND() * (DATEDIFF(CURRENT_DATE(), '2022-01-01')) DAY);
 
+/*Carreguem les dades dels treballadors.*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/treballadors.csv'
 INTO TABLE Treballadors
 FIELDS TERMINATED BY ','
@@ -98,14 +42,17 @@ ENCLOSED BY '"'
 IGNORE 1 LINES
 (DNI_treballador, Nom, Cognom, Correu, Tlf, @dummy, Data_naixement, Estudis);
 
+/*Establim el salari dels treballadors a l'atzar.*/
 UPDATE Treballadors
 SET Salari = ROUND(1000 + (RAND() * (1440 - 1000)), 2);
 
+/*Insertem 22 treballadors com a monitors mitjançant el DNI.*/
 INSERT INTO Monitors (DNI_treballador, Rol)
 SELECT DNI_treballador, NULL AS Rol
 FROM Treballadors
 LIMIT 22;
 
+/*Fem inserts manuals sobre cada cosa que ha de fer el monitor en el gimnàs.*/
 UPDATE Monitors
 SET Rol = 'Fa control dels vestuaris del gimnàs.'
 WHERE DNI_treballador = '05514189P';
@@ -194,12 +141,13 @@ UPDATE Monitors
 SET Rol = 'Fa classes en les sales.'
 WHERE DNI_treballador = '77564026E';
 
-
+/*Els DNIs que no estàn en la taula de "Monitors" hi estàn en la taula de "Entrenadors_personals".*/
 INSERT INTO Entrenadors_personals (DNI_treballador, Descripcio)
 SELECT DNI_treballador, NULL AS Descripcio
 FROM Treballadors
 WHERE DNI_treballador NOT IN (SELECT DNI_treballador FROM Monitors);
 
+/*Ens hem inventant les especialitat i descripcions de cada entrenador personal.*/
 UPDATE Entrenadors_personals
 SET Descripcio = 'Entrenador especialitzat en escalada, tant en interiors com en exteriors de forma segura per millorar la força i coordinació.'
 WHERE DNI_treballador = '84605514Z';
@@ -250,6 +198,7 @@ VALUES
     (3, '81311320H'),
     (4, '82677449Q');
 
+/*Estem introduïnt les classes dirigides amb un CSV que recopila tota la informació que ens interessa tenint en compte que siguin dades amb sentit basant en les descripcions anteriors i sense repeticions.*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/classes_dirigides.csv'
 INTO TABLE Classes_Dirigides
 FIELDS TERMINATED BY '\t'
@@ -270,6 +219,7 @@ ORDER BY
     RAND()
 LIMIT 222;
 
+/*Assignació d'entrenadors a alguns clients manualment.*/
 UPDATE Clients
 SET Entrenador_assignat = '6'
 WHERE DNI = 'Z6650879C';
@@ -342,6 +292,7 @@ UPDATE Clients
 SET Entrenador_assignat = '1'
 WHERE DNI = '64590852K';
 
+/*En aquesta carrega de dades i la següent, estem afegint les dades de les màquines del gimnàs a partir d'un mateix CSV seleccionant les dades que ens interessen per a cada taula.*/
 LOAD DATA LOCAL INFILE '/home/usuari/GitHub/Gym-Database/csv/maquines.csv'
 INTO TABLE Maquina_estacions FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
@@ -352,20 +303,25 @@ INTO TABLE Tipus_maquina_estacions FIELDS TERMINATED BY '\t'
 IGNORE 1 LINES
 (Id_Maquina, @dummy, tipus, @dummy, Pes_maquina, Pes_max, Pes_min);
 
+/*A continuació, explicarem com carregar imatges longblob en SQL.*/
 
+/*Carrega de imatges en el MySQL - va al final del gym_emecanotdo-insert.sql.*/
 UPDATE Espais
 SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_1.png')
 WHERE Id_espai = 9;
 
+/*Comprovem que la imatge s'ha carregar correctament, per tant, ho extraem per poder veure-la en el sistema operatiu.*/
 SELECT img_espai FROM Espais WHERE Id_espai = 9 INTO DUMPFILE '/tmp/verify_piscina_1.png';
 
+/*La imatge s'ha carregat però ha quedat una cadena de text molt llarga. Per simplificar la vista, ho convertim a una cadena de text hexadecimal de 10 caràcters*/
 UPDATE Espais
 SET img_espai = UNHEX(SUBSTRING(HEX(LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_1.png')), 1, 10))
 WHERE Id_espai = 9;
 
+/*Hem cortat la cadena del codi de la imatge, per tant, ja no es pot llegir. Amb aquest arxiu ho comprovem, ja que no es pot obrir.*/
 SELECT img_espai FROM Espais WHERE Id_espai = 9 INTO DUMPFILE '/tmp/verify_piscina_1_shortened.png';
 
-/**/
+/*A partir d'ara es repetirà el mateix procés. Ens hem deixat comentaris buits per separar cada espai.*/
 UPDATE Espais
 SET img_espai = LOAD_FILE('/var/lib/mysql/gym_emecanotdo/espais/piscina_2.png')
 WHERE Id_espai = 10;
