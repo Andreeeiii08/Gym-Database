@@ -1,4 +1,4 @@
-Id_Maquina	id_espai	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min	img_maquina
+Id_Maquina	id_espai	Nom_maquina	Estat	Pes_maquina	Pes_max	Pes_min
 G69-1	12	Cinta de córrer	Operativa	60	0	0	NULL
 G69-2	12	Cinta de córrer	En manteniment	60	0	0	NULL
 G69-3	12	Cinta de córrer	Operativa	60	0	0	NULL
