@@ -1,0 +1,872 @@
+mysql:[root:gym_emecanotdo]> SHOW TABLES;
++--------------------------+
+| Tables_in_gym_emecanotdo |
++--------------------------+
+| Classes_Dirigides        |
+| Client_Classe            |
+| Clients                  |
+| Entrenadors_personals    |
+| Espais                   |
+| Maquina_estacions        |
+| Matricula                |
+| Monitors                 |
+| Tipus_maquina_estacions  |
+| Treballadors             |
+| Treballadors_Zones       |
+| Zones                    |
++--------------------------+
+12 rows in set (0,00 sec)
+
+
+
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> select * from Classes_Dirigides;
++-----------+------------+----------+------------+------------+---------------------------+-----------+-----------------------------------------------------------------------------------------------+
+| Id_classe | Id_monitor | Id_espai | Hora_inici | Hora_final | Nom_clase                 | Dia       | Descripcio                                                                                    |
++-----------+------------+----------+------------+------------+---------------------------+-----------+-----------------------------------------------------------------------------------------------+
+|         1 |          3 |        7 | 13:00:00   | 14:00:00   | Ioga                      | Dilluns   | Moviment i respiració per equilibrar cos i ment                                               |
+|         2 |          3 |        8 | 14:30:00   | 15:30:00   | Pilates                   | Dimarts   | Exercicis controlats per a força i flexibilitat                                               |
+|         3 |          3 |        8 | 16:00:00   | 17:00:00   | Pilates                   | Dijous    | Exercicis controlats per a força i flexibilitat                                               |
+|         4 |          3 |        8 | 17:30:00   | 18:30:00   | Pilates                   | Divendres | Exercicis controlats per a força i flexibilitat                                               |
+|         5 |          3 |        7 | 19:00:00   | 20:00:00   | Ioga                      | Dissabte  | Moviment i respiració per equilibrar cos i ment                                               |
+|         6 |          6 |       13 | 09:00:00   | 10:00:00   | Cardio dance              | Dilluns   | Una combinació d'exercicis de dansa i cardiovasculars per a un entrenament eficent.           |
+|         7 |          6 |       14 | 10:30:00   | 11:30:00   | Cardio dance              | Dimarts   | Una combinació d'exercicis de dansa i cardiovasculars per a un entrenament eficent.           |
+|         8 |          6 |       15 | 12:00:00   | 13:00:00   | Zumba                     | Dijous    | Balla i posa't en forma amb ritmes llatins en una sessió energètica.                          |
+|         9 |          6 |       16 | 13:30:00   | 14:30:00   | Zumba                     | Divendres | Balla i posa't en forma amb ritmes llatins en una sessió energètica.                          |
+|        10 |          6 |       17 | 15:00:00   | 16:00:00   | Zumba                     | Dissabte  | Balla i posa't en forma amb ritmes llatins en una sessió energètica.                          |
+|        11 |          9 |        8 | 10:00:00   | 11:00:00   | Pilates                   | Dilluns   | Exercicis controlats per a força i flexibilitat                                               |
+|        12 |          9 |        7 | 11:30:00   | 12:30:00   | Ioga                      | Dimarts   | Moviment i respiració per equilibrar cos i ment                                               |
+|        13 |          9 |        7 | 13:00:00   | 14:00:00   | Ioga                      | Dijous    | Moviment i respiració per equilibrar cos i ment                                               |
+|        14 |          9 |        7 | 14:30:00   | 15:30:00   | Ioga                      | Divendres | Moviment i respiració per equilibrar cos i ment                                               |
+|        15 |          9 |        8 | 16:00:00   | 17:00:00   | Pilates                   | Dissabte  | Exercicis controlats per a força i flexibilitat                                               |
+|        16 |         10 |        9 | 09:00:00   | 10:00:00   | Natació per a pricipants  | Dilluns   | Aprèn habilitats bàsiques de natació i millora la confiança a l'aigua.                        |
+|        17 |         10 |       10 | 10:30:00   | 11:30:00   | Natació avançada          | Dimarts   | Perfecciona tècniques de natació i incrementa la resistència a l'aigua.                       |
+|        18 |         10 |        9 | 12:00:00   | 13:00:00   | Natació per a pricipants  | Dijous    | Aprèn habilitats bàsiques de natació i millora la confiança a l'aigua.                        |
+|        19 |         10 |       10 | 13:30:00   | 14:30:00   | Natació avançada          | Divendres | Perfecciona tècniques de natació i incrementa la resistència a l'aigua.                       |
+|        20 |         10 |       10 | 15:00:00   | 16:00:00   | Natació avançada          | Dissabte  | Clase dirigida en la piscina gran número 1.                                                   |
+|        21 |         12 |       13 | 08:00:00   | 09:00:00   | Tonificació total         | Dilluns   | Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.             |
+|        22 |         12 |       14 | 09:30:00   | 10:30:00   | Tonificació total         | Dimarts   | Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.             |
+|        23 |         12 |       15 | 11:00:00   | 12:00:00   | Tonificació total         | Dijous    | Un treball enfocat en tonificar tots els grups musculars amb repeticions ràpides.             |
+|        24 |         12 |       16 | 17:00:00   | 18:00:00   | Circuit de força          | Dissabte  | Rotacions ràpides d'exercicis de força per treballar el cos de manera eficient.               |
+|        25 |         12 |       17 | 14:00:00   | 15:00:00   | Circuit de força          | Dissabte  | Rotacions ràpides d'exercicis de força per treballar el cos de manera eficient.               |
+|        26 |         15 |        7 | 09:00:00   | 10:00:00   | Meditació                 | Dilluns   | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        27 |         15 |        7 | 10:30:00   | 11:30:00   | Meditació                 | Dimarts   | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        28 |         15 |        8 | 12:00:00   | 13:00:00   | Stretching                | Dijous    | Flexibilitat i relaxació muscular.                                                            |
+|        29 |         15 |        8 | 13:30:00   | 14:30:00   | Stretching                | Divendres | Flexibilitat i relaxació muscular.                                                            |
+|        30 |         15 |        7 | 15:00:00   | 16:00:00   | Meditació                 | Dissabte  | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        31 |         16 |       11 | 09:00:00   | 10:00:00   | Aigua-gym                 | Dilluns   | Exercicis de baix impacte a l'aigua per millorar la força i la resistència muscular.          |
+|        32 |         16 |       11 | 10:30:00   | 11:30:00   | Aigua-dança               | Dimarts   | Balla al ritme de la música mentre fas exercici a l'aigua per mantenir-se actiu.              |
+|        33 |         16 |       11 | 12:00:00   | 13:00:00   | Aigua-dança               | Dijous    | Balla al ritme de la música mentre fas exercici a l'aigua per mantenir-se actiu.              |
+|        34 |         16 |       11 | 13:30:00   | 14:30:00   | Esport aquàtic            | Divendres | Activitats esportives  realitzades a l'aigua per millorar la forma física i la coordinació.   |
+|        35 |         16 |       11 | 15:00:00   | 16:00:00   | Esport aquàtic            | Dissabte  | Activitats esportives  realitzades a l'aigua per millorar la forma física i la coordinació.   |
+|        36 |         18 |       13 | 08:00:00   | 09:00:00   | Core i Estabilitat        | Dilluns   | Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.        |
+|        37 |         18 |       14 | 09:30:00   | 10:30:00   | Tonificació Express       | Dimarts   | Exercicis de tonificació intensa per a tot el cos.                                            |
+|        38 |         18 |       15 | 11:00:00   | 12:00:00   | Tonificació Express       | Dijous    | Exercicis de tonificació intensa per a tot el cos.                                            |
+|        39 |         18 |       16 | 12:30:00   | 13:30:00   | Core i Estabilitat        | Divendres | Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.        |
+|        40 |         18 |       17 | 14:00:00   | 15:00:00   | Core i Estabilitat        | Dissabte  | Reforça el nucli muscular i millora l'estabilitat amb exercicis centrats en l'abdomen.        |
+|        41 |         21 |        8 | 08:00:00   | 09:00:00   | Meditació                 | Dilluns   | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        42 |         21 |        8 | 09:30:00   | 10:30:00   | Meditació                 | Dimarts   | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        43 |         21 |        8 | 11:00:00   | 12:00:00   | Meditació                 | Dijous    | Calma mental i reducció d'estrès amb atenció plena.                                           |
+|        44 |         21 |        7 | 12:30:00   | 13:30:00   | Stretching                | Divendres | Flexibilitat i relaxació muscular.                                                            |
+|        45 |         21 |        7 | 14:00:00   | 15:00:00   | Stretching                | Dissabte  | Flexibilitat i relaxació muscular.                                                            |
++-----------+------------+----------+------------+------------+---------------------------+-----------+-----------------------------------------------------------------------------------------------+
+45 rows in set (0,01 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> select * from Client_Classe;
++------------+-----------+
+| DNI_client | Id_classe |
++------------+-----------+
+| 01687342Q  |         1 |
+| 30273202G  |         1 |
+| 38776597T  |         1 |
+| X4482664X  |         1 |
+| Z6650879C  |         1 |
+| 20782786D  |         2 |
+| 65725288M  |         2 |
+| 80207869S  |         2 |
+| 65099652S  |         3 |
+| 65169708J  |         3 |
+| 67711844M  |         3 |
+| 69844646V  |         3 |
+| 01957085S  |         4 |
+| 40036099E  |         4 |
+| 80207869S  |         4 |
+| X6491946N  |         4 |
+| X7570502Y  |         4 |
+| 38029861M  |         5 |
+| 54199325D  |         5 |
+| 65171600L  |         5 |
+| 86483964P  |         5 |
+| 30273202G  |         6 |
+| 37717607E  |         6 |
+| 38029861M  |         6 |
+| 38776597T  |         6 |
+| 79328090D  |         6 |
+| Z6650879C  |         6 |
+| 38776597T  |         7 |
+| 65171600L  |         7 |
+| Y9707024A  |         7 |
+| 38776597T  |         8 |
+| 64590852K  |         8 |
+| 74419246D  |         8 |
+| 77670477Y  |         8 |
+| 25403830P  |         9 |
+| 29942540J  |         9 |
+| 38776597T  |         9 |
+| 41919033S  |         9 |
+| 55985225M  |         9 |
+| 65171600L  |         9 |
+| 80482715B  |         9 |
+| 23253721P  |        10 |
+| 32547625A  |        10 |
+| 65169708J  |        10 |
+| Z3967199A  |        10 |
+| 16523737P  |        11 |
+| 44869080J  |        11 |
+| 52062716P  |        11 |
+| 52984492J  |        11 |
+| 65725288M  |        11 |
+| 29703290D  |        12 |
+| 90487658T  |        12 |
+| Y7109014G  |        12 |
+| 40036099E  |        13 |
+| 80482715B  |        13 |
+| Y9707024A  |        13 |
+| Y9796916B  |        13 |
+| Z5236296Y  |        13 |
+| 07963208X  |        14 |
+| 41919033S  |        14 |
+| 73073291Z  |        14 |
+| 64609871L  |        15 |
+| 81663628N  |        15 |
+| 81835886T  |        15 |
+| 86483964P  |        15 |
+| 88428356A  |        15 |
+| 98605883F  |        15 |
+| 99776218X  |        15 |
+| 66294013D  |        16 |
+| 81663628N  |        16 |
+| 84796178P  |        16 |
+| 18090692L  |        17 |
+| 20782786D  |        17 |
+| 31916234P  |        17 |
+| 32547625A  |        17 |
+| 65169708J  |        17 |
+| 84796178P  |        17 |
+| 86196855P  |        17 |
+| X9548079C  |        17 |
+| Y9796916B  |        17 |
+| 01957085S  |        18 |
+| 07963208X  |        18 |
+| 37590422G  |        18 |
+| 55361235M  |        18 |
+| 83462689J  |        18 |
+| 84796178P  |        18 |
+| 96219578K  |        18 |
+| X4046310N  |        18 |
+| Z6650879C  |        18 |
+| 56923865S  |        19 |
+| X6491946N  |        19 |
+| 10254861N  |        20 |
+| 73073291Z  |        20 |
+| 74419246D  |        20 |
+| X9548079C  |        20 |
+| Z6578685T  |        20 |
+| 06732835E  |        21 |
+| 29080475B  |        21 |
+| 44869080J  |        21 |
+| 67711844M  |        21 |
+| 69479828W  |        21 |
+| 73073291Z  |        21 |
+| 86196855P  |        21 |
+| X4046310N  |        21 |
+| X6491946N  |        21 |
+| Z6578685T  |        21 |
+| 40036099E  |        22 |
+| 56923865S  |        23 |
+| 65099652S  |        23 |
+| 68391900C  |        23 |
+| 80207869S  |        23 |
+| 83462689J  |        23 |
+| 96514330M  |        23 |
+| 98605883F  |        23 |
+| 01687342Q  |        24 |
+| 38029861M  |        24 |
+| 01957085S  |        25 |
+| 07963208X  |        25 |
+| 12098810M  |        25 |
+| 55421398T  |        25 |
+| 55985225M  |        25 |
+| 64590852K  |        25 |
+| 29703290D  |        26 |
+| Y9796916B  |        26 |
+| Z5236296Y  |        26 |
+| 07963208X  |        27 |
+| 23253721P  |        27 |
+| 25403830P  |        27 |
+| 57457005S  |        27 |
+| 77670477Y  |        27 |
+| Y1849564X  |        27 |
+| 38029861M  |        28 |
+| 67711844M  |        28 |
+| 69844646V  |        28 |
+| 79328090D  |        28 |
+| 83462689J  |        28 |
+| 85478130X  |        28 |
+| 37717607E  |        29 |
+| Y9707024A  |        29 |
+| 31916234P  |        30 |
+| 54199325D  |        30 |
+| 55421398T  |        30 |
+| 85478130X  |        30 |
+| 37717607E  |        31 |
+| 40036099E  |        31 |
+| 78150820V  |        31 |
+| 52984492J  |        32 |
+| 55421398T  |        32 |
+| 65171600L  |        32 |
+| 73073291Z  |        32 |
+| 77670477Y  |        32 |
+| 13149317X  |        33 |
+| 25403830P  |        33 |
+| 65099652S  |        33 |
+| X4046310N  |        33 |
+| Y9796916B  |        33 |
+| 57457005S  |        34 |
+| 69479828W  |        34 |
+| X4046310N  |        34 |
+| X9548079C  |        34 |
+| 29422114P  |        35 |
+| 81221692K  |        35 |
+| 82559537W  |        35 |
+| 01957085S  |        36 |
+| 12117595E  |        36 |
+| 29942540J  |        36 |
+| 65169708J  |        36 |
+| 65171600L  |        36 |
+| 82559537W  |        36 |
+| 06732835E  |        37 |
+| 07963208X  |        37 |
+| 54199325D  |        37 |
+| 57457005S  |        37 |
+| 79328090D  |        37 |
+| Y0384382C  |        37 |
+| 52984492J  |        38 |
+| 64609871L  |        38 |
+| 66294013D  |        38 |
+| 67711844M  |        38 |
+| 86483964P  |        38 |
+| X9548079C  |        38 |
+| Z6578685T  |        38 |
+| 16523737P  |        39 |
+| 25403830P  |        39 |
+| 39734987A  |        39 |
+| 41919033S  |        39 |
+| 82654920G  |        39 |
+| 86483964P  |        39 |
+| Y9796916B  |        39 |
+| 79328090D  |        40 |
+| 80482715B  |        40 |
+| 86483964P  |        40 |
+| 07963208X  |        41 |
+| 29422114P  |        41 |
+| 32547625A  |        41 |
+| 38776597T  |        41 |
+| 52062716P  |        41 |
+| 01687342Q  |        42 |
+| 37590422G  |        42 |
+| 37717607E  |        42 |
+| 52984492J  |        42 |
+| X4046310N  |        42 |
+| 12117595E  |        43 |
+| 29703290D  |        43 |
+| 36452461Z  |        43 |
+| 65725288M  |        43 |
+| 66294013D  |        43 |
+| 86196855P  |        43 |
+| 20782786D  |        44 |
+| 31916234P  |        44 |
+| 33631038R  |        44 |
+| 38776597T  |        44 |
+| 41976274D  |        44 |
+| 81221692K  |        44 |
+| 84796178P  |        44 |
+| 86196855P  |        44 |
+| Z6650879C  |        44 |
+| 23253721P  |        45 |
+| 79328090D  |        45 |
+| 82559537W  |        45 |
+| 86196855P  |        45 |
+| X4046310N  |        45 |
++------------+-----------+
+222 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+*Aqui en la taula clients hi han entrenadors assignats NULL perque no tots els clients tenen un entrenador. En aquesta taula només surten els DNIs ja que en la taula 'Matricula' profunditza més l'informació.
+mysql:[root:gym_emecanotdo]> select * from Clients;
++-----------+---------------------+
+| DNI       | Entrenador_assignat |
++-----------+---------------------+
+| 01957085S |                NULL |
+| 05746007D |                NULL |
+| 06732835E |                NULL |
+| 07614339M |                NULL |
+| 07963208X |                NULL |
+| 10254861N |                NULL |
+| 12098810M |                NULL |
+| 12117595E |                NULL |
+| 13149317X |                NULL |
+| 16523737P |                NULL |
+| 18090692L |                NULL |
+| 20782786D |                NULL |
+| 23113850T |                NULL |
+| 25403830P |                NULL |
+| 25407990M |                NULL |
+| 26029831H |                NULL |
+| 26955057T |                NULL |
+| 29080475B |                NULL |
+| 29422114P |                NULL |
+| 29703290D |                NULL |
+| 29942540J |                NULL |
+| 30273202G |                NULL |
+| 31916234P |                NULL |
+| 32547625A |                NULL |
+| 33631038R |                NULL |
+| 37717607E |                NULL |
+| 38029861M |                NULL |
+| 38776597T |                NULL |
+| 39734987A |                NULL |
+| 40036099E |                NULL |
+| 41919033S |                NULL |
+| 41976274D |                NULL |
+| 44869080J |                NULL |
+| 47201472K |                NULL |
+| 52062716P |                NULL |
+| 52984492J |                NULL |
+| 54199325D |                NULL |
+| 55361235M |                NULL |
+| 55421398T |                NULL |
+| 55985225M |                NULL |
+| 56923865S |                NULL |
+| 57457005S |                NULL |
+| 64609871L |                NULL |
+| 65169708J |                NULL |
+| 65171600L |                NULL |
+| 66294013D |                NULL |
+| 67088071S |                NULL |
+| 69479828W |                NULL |
+| 69844646V |                NULL |
+| 73073291Z |                NULL |
+| 74419246D |                NULL |
+| 75970717S |                NULL |
+| 77670477Y |                NULL |
+| 78150820V |                NULL |
+| 79328090D |                NULL |
+| 80207869S |                NULL |
+| 81663628N |                NULL |
+| 81835886T |                NULL |
+| 82559537W |                NULL |
+| 82654920G |                NULL |
+| 83462689J |                NULL |
+| 84796178P |                NULL |
+| 85478130X |                NULL |
+| 86196855P |                NULL |
+| 86483964P |                NULL |
+| 90487658T |                NULL |
+| 94036518Y |                NULL |
+| 96219578K |                NULL |
+| 96514330M |                NULL |
+| 98605883F |                NULL |
+| X4046310N |                NULL |
+| X4917790E |                NULL |
+| X6491946N |                NULL |
+| X7570502Y |                NULL |
+| X9548079C |                NULL |
+| Y0384382C |                NULL |
+| Y1849564X |                NULL |
+| Y7109014G |                NULL |
+| Y9618125E |                NULL |
+| Y9796916B |                NULL |
+| Z3967199A |                NULL |
+| Z5236296Y |                NULL |
+| 01687342Q |                   1 |
+| 23253721P |                   1 |
+| 64590852K |                   1 |
+| 36452461Z |                   2 |
+| 37590422G |                   2 |
+| 52901724E |                   2 |
+| 65099652S |                   3 |
+| 65725288M |                   3 |
+| 67711844M |                   3 |
+| 68391900C |                   4 |
+| 80482715B |                   4 |
+| 81221692K |                   4 |
+| 88428356A |                   5 |
+| 99776218X |                   5 |
+| X4482664X |                   5 |
+| Y9707024A |                   6 |
+| Z6578685T |                   6 |
+| Z6650879C |                   6 |
++-----------+---------------------+
+100 rows in set (0,01 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Entrenadors_personals;
++---------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------+
+| Id_entrenador | DNI_treballador | Descripcio                                                                                                                      |
++---------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------+
+|             1 | 84605514Z       | Entrenador especialitzat en escalada, tant en interiors com en exteriors de forma segura per millorar la força i coordinació.   |
+|             2 | 86989486J       | Massatgista professional que alivia la tensió muscular i millora la circulació sanguinea amb el seu treball.                    |
+|             3 | 87250359C       | Experència en diseny de programes de rutina eficients amb resultats ràpids i efectius.                                          |
+|             4 | 91354962C       | Expert en entrenament de força i acondiconament físic que descaca en el levantament de peçes.                                   |
+|             5 | 92348206D       | Coach especialitzat en mentalitat i motivació que ajuda als clients per arribar al màxim potencia                               |
+|             6 | 95379746B       | Especialitzada en resistència i força, amb un enfoc de levantament de força i donar volum corporal.                             |
++---------------+-----------------+---------------------------------------------------------------------------------------------------------------------------------+
+6 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Espais;
++----------+---------+------------+---------------+---------------+---------------+---------------+---------------+------------+------------+---------------------------------------------------+----------------------+
+| Id_espai | Id_zona | Superficie | Dutxes        | Taquilles     | Expendedores  | Font_aigua    | Pantalles     | Altaveus   | Miralls    | Descripcio                                        | img_espai            |
++----------+---------+------------+---------------+---------------+---------------+---------------+---------------+------------+------------+---------------------------------------------------+----------------------+
+|        1 |       1 |      40.00 | Disponible    | Disponible    | No disponible | Disponible    | No disponible | Disponible | Disponible | Vesturis pel personal  masculí del gimnàs.        | 0x89504E470D         |
+|        2 |       1 |      40.00 | Disponible    | Disponible    | No disponible | Disponible    | No disponible | Disponible | Disponible | Vesturis pel personal  femení del gimnàs.         | 0x89504E470D         |
+|        3 |       1 |     100.00 | Disponible    | Disponible    | No disponible | Disponible    | No disponible | Disponible | Disponible | Vesturis pel socis masculins.                     | 0x89504E470D         |
+|        4 |       1 |     100.00 | Disponible    | Disponible    | No disponible | Disponible    | No disponible | Disponible | Disponible | Vesturis per les socies femenines.                | 0x89504E470D         |
+|        5 |       2 |      20.00 | No disponible | No disponible | Disponible    | Disponible    | No disponible | Disponible | Disponible | Sauna gran per 10 persones amb vapor.             | 0x89504E470D         |
+|        6 |       2 |      10.00 | No disponible | No disponible | No disponible | Disponible    | Disponible    | Disponible | Disponible | Sauna petita per 5 persones sense vapor.          | 0x89504E470D         |
+|        7 |       3 |      10.00 | No disponible | No disponible | No disponible | No disponible | No disponible | Disponible | Disponible | Solàrium de l’est del gimnàs.                     | 0x89504E470D         |
+|        8 |       3 |      15.00 | No disponible | No disponible | No disponible | No disponible | No disponible | Disponible | Disponible | Solàrium de l’oest del gimnàs.                    | 0x89504E470D         |
+|        9 |       4 |     100.00 | Disponible    | No disponible | No disponible | No disponible | Disponible    | Disponible | Disponible | Piscina gran número 1.                            | 0x89504E470D         |
+|       10 |       4 |     120.00 | Disponible    | No disponible | No disponible | No disponible | Disponible    | Disponible | Disponible | Piscina gran número 2.                            | 0x89504E470D         |
+|       11 |       4 |      60.00 | Disponible    | No disponible | No disponible | No disponible | No disponible | Disponible | Disponible | Piscina petita per tot el públic.                 | 0x89504E470D         |
+|       12 |       5 |     500.00 | No disponible | Disponible    | Disponible    | Disponible    | Disponible    | Disponible | Disponible | Aquest espai per maquinària.                      | 0x89504E470D         |
+|       13 |       6 |      50.00 | No disponible | No disponible | No disponible | Disponible    | Disponible    | Disponible | Disponible | Espai cerrat número 1 per fer classes dirigides.  | 0x89504E470D         |
+|       14 |       6 |      60.00 | No disponible | No disponible | Disponible    | Disponible    | No disponible | Disponible | Disponible | Espai cerrat número 2 per fer classes dirigides.  | 0x89504E470D         |
+|       15 |       6 |      40.00 | No disponible | No disponible | No disponible | No disponible | Disponible    | Disponible | Disponible | Espai cerrat número 3 per fer classes dirigides.  | 0x89504E470D         |
+|       16 |       6 |      45.00 | No disponible | No disponible | No disponible | Disponible    | Disponible    | Disponible | Disponible | Espai cerrat número 4 per fer classes dirigides.  | 0x89504E470D         |
+|       17 |       6 |      55.00 | No disponible | No disponible | No disponible | No disponible | No disponible | Disponible | Disponible | Espai cerrat número 5 per fer classes dirigides.  | 0x89504E470D         |
++----------+---------+------------+---------------+---------------+---------------+---------------+---------------+------------+------------+---------------------------------------------------+----------------------+
+17 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Maquina_estacions;
++----------+------------+----------------+
+| Id_espai | Id_Maquina | Estat          |
++----------+------------+----------------+
+|       12 | B01-1      | Operativa      |
+|       12 | B01-2      | Operativa      |
+|       12 | B01-3      | Operativa      |
+|       12 | B02-1      | Operativa      |
+|       12 | B02-2      | Inoperativa    |
+|       12 | B02-3      | Operativa      |
+|       12 | B12-1      | Operativa      |
+|       12 | B12-2      | Operativa      |
+|       12 | B12-3      | Operativa      |
+|       12 | B22-1      | Inoperativa    |
+|       12 | B22-2      | Operativa      |
+|       12 | B22-3      | Operativa      |
+|       12 | B32-1      | Operativa      |
+|       12 | B32-2      | Operativa      |
+|       12 | B32-3      | Operativa      |
+|       12 | B34-1      | Operativa      |
+|       12 | B34-2      | Operativa      |
+|       12 | B34-3      | En manteniment |
+|       12 | B96-1      | Operativa      |
+|       12 | B96-2      | En manteniment |
+|       12 | B96-3      | Operativa      |
+|       12 | B98-1      | Operativa      |
+|       12 | B98-2      | Operativa      |
+|       12 | B98-3      | Operativa      |
+|       12 | C12-1      | Operativa      |
+|       12 | C12-2      | Operativa      |
+|       12 | C12-3      | Operativa      |
+|       12 | C22-1      | Operativa      |
+|       12 | C22-2      | Inoperativa    |
+|       12 | C22-3      | Operativa      |
+|       12 | C88-1      | Operativa      |
+|       12 | C88-2      | Operativa      |
+|       12 | C88-3      | Operativa      |
+|       12 | D01-1      | Operativa      |
+|       12 | D01-2      | Operativa      |
+|       12 | D01-3      | Operativa      |
+|       12 | D23-1      | Operativa      |
+|       12 | D23-2      | Operativa      |
+|       12 | D23-3      | En manteniment |
+|       12 | D33-1      | Inoperativa    |
+|       12 | D33-2      | Inoperativa    |
+|       12 | D33-3      | Inoperativa    |
+|       12 | D43-1      | Operativa      |
+|       12 | D43-2      | Operativa      |
+|       12 | D43-3      | Operativa      |
+|       12 | D44-1      | Inoperativa    |
+|       12 | D44-2      | En manteniment |
+|       12 | D44-3      | Operativa      |
+|       12 | D98-1      | Operativa      |
+|       12 | D98-2      | Operativa      |
+|       12 | D98-3      | Operativa      |
+|       12 | E12-1      | En manteniment |
+|       12 | E12-2      | Operativa      |
+|       12 | E12-3      | Operativa      |
+|       12 | E99-1      | Operativa      |
+|       12 | E99-2      | Operativa      |
+|       12 | E99-3      | Inoperativa    |
+|       12 | F09-1      | Operativa      |
+|       12 | F09-2      | Operativa      |
+|       12 | F09-3      | Operativa      |
+|       12 | F12-1      | Operativa      |
+|       12 | F12-2      | Operativa      |
+|       12 | F12-3      | Operativa      |
+|       12 | F69-1      | Operativa      |
+|       12 | F69-2      | Operativa      |
+|       12 | F69-3      | Operativa      |
+|       12 | F77-1      | En manteniment |
+|       12 | F77-2      | Operativa      |
+|       12 | F77-3      | Operativa      |
+|       12 | G04-1      | Operativa      |
+|       12 | G04-2      | Operativa      |
+|       12 | G04-3      | Operativa      |
+|       12 | G05-1      | Operativa      |
+|       12 | G05-2      | Operativa      |
+|       12 | G05-3      | Inoperativa    |
+|       12 | G07-1      | Operativa      |
+|       12 | G07-2      | Operativa      |
+|       12 | G07-3      | Operativa      |
+|       12 | G32-1      | En manteniment |
+|       12 | G32-2      | Operativa      |
+|       12 | G32-3      | Operativa      |
+|       12 | G69-1      | Operativa      |
+|       12 | G69-2      | En manteniment |
+|       12 | G69-3      | Operativa      |
+|       12 | G74-1      | En manteniment |
+|       12 | G74-2      | Operativa      |
+|       12 | G74-3      | Operativa      |
+|       12 | G79-1      | Inoperativa    |
+|       12 | G79-2      | Operativa      |
+|       12 | G79-3      | Operativa      |
+|       12 | G99-1      | Inoperativa    |
+|       12 | G99-2      | Inoperativa    |
+|       12 | G99-3      | Inoperativa    |
++----------+------------+----------------+
+93 rows in set (0,01 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Matricula;
++-----------+------------+---------------------+----------------+-----------+-------------------------------+-------------------------------------+------------+----------------+--------------+--------------------------+
+| DNI       | Nom        | Cognoms             | Data_naixement | Tlf       | Correu                        | Adreça                              | Data_alta  | Preu_matricula | Preu_mensual | NºBanc                   |
++-----------+------------+---------------------+----------------+-----------+-------------------------------+-------------------------------------+------------+----------------+--------------+--------------------------+
+| 01687342Q | Len        | Buck Mclean         | 2007-03-26     | 644390626 | l_buck@gmail.com              | Ap #320-7054 Sem Rd.                | 2023-01-31 |          80.00 |        32.98 | ES7120481621543287645945 |
+| 01957085S | Whilemina  | Pierce Frazier      | 1950-03-07     | 620066226 | wpierce9649@gmail.com         | 159-2303 Massa. St.                 | 2024-01-16 |          80.00 |        32.98 | ES4421036321168057375959 |
+| 05746007D | Brennan    | Harvey Larson       | 1939-12-19     | 647514451 | harvey_brennan3561@gmail.com  | 141-1268 Cras St.                   | 2024-03-12 |          80.00 |        32.98 | ES1101883759260979887040 |
+| 06732835E | Tucker     | Chen King           | 1951-07-14     | 608976676 | c.tucker220@gmail.com         | P.O. Box 946, 4991 Libero Ave       | 2022-01-27 |          80.00 |        32.98 | ES2402165920384854992974 |
+| 07614339M | Zeus       | Burns Gay           | 1938-06-15     | 687322269 | z-burns@gmail.com             | 712-3730 Tortor Rd.                 | 2022-12-07 |          80.00 |        32.98 | ES0201382030272993835704 |
+| 07963208X | Imogene    | Pennington Landry   | 1949-11-12     | 611778008 | ipennington@gmail.com         | 132-1116 Quis Ave                   | 2024-01-24 |          80.00 |        32.98 | ES7301987876115867178158 |
+| 10254861N | Vernon     | Green Kelly         | 1991-11-12     | 634859285 | g.vernon3875@gmail.com        | Ap #634-6860 Maecenas St.           | 2022-05-12 |          80.00 |        32.98 | ES7501884437192244755320 |
+| 12098810M | Jenette    | Hopkins Riddle      | 1977-02-27     | 645756445 | j.hopkins6067@gmail.com       | 586 Cubilia Av.                     | 2022-05-18 |          80.00 |        32.98 | ES2100619313236086730716 |
+| 12117595E | Dexter     | Diaz Cooke          | 1966-04-29     | 664517801 | diaz_dexter@gmail.com         | 129-8516 Vestibulum Ave             | 2022-10-21 |          80.00 |        32.98 | ES7520488422578043317526 |
+| 13149317X | Elton      | Howell Allen        | 1925-06-16     | 626313148 | h.elton@gmail.com             | 480-1271 Luctus Street              | 2022-07-03 |          80.00 |        32.98 | ES3600813132590223960538 |
+| 16523737P | Zane       | Rhodes Boone        | 1925-04-22     | 671306165 | rhodes-zane@gmail.com         | 5048 Ligula St.                     | 2022-02-07 |          80.00 |        32.98 | ES1221004890811090346560 |
+| 18090692L | Rogan      | Ballard Marshall    | 2000-02-12     | 645217313 | r.ballard@gmail.com           | Ap #491-3479 Arcu. Rd.              | 2023-05-21 |          80.00 |        32.98 | ES3402340515450823400810 |
+| 20782786D | Orli       | Fox Benjamin        | 1978-02-08     | 668440463 | orli-fox9536@gmail.com        | 137-7552 Semper, Av.                | 2023-11-04 |          80.00 |        32.98 | ES3800812658385627760462 |
+| 23113850T | Octavius   | Farrell Peterson    | 1957-09-21     | 607713617 | f_octavius@gmail.com          | Ap #149-3083 Mi. Av.                | 2022-04-12 |          80.00 |        32.98 | ES1621006373261350813735 |
+| 23253721P | Darius     | Henry Burton        | 1994-09-18     | 623897510 | hdarius2718@gmail.com         | P.O. Box 247, 4303 Ultricies Street | 2022-08-24 |          80.00 |        32.98 | ES2331837886629158053549 |
+| 25403830P | Duncan     | Hester Dean         | 1943-01-26     | 652591792 | hester.duncan@gmail.com       | Ap #561-2824 Sollicitudin Rd.       | 2024-05-19 |          80.00 |        32.98 | ES7501864272759721200074 |
+| 25407990M | Cassady    | Stuart Grant        | 1934-01-13     | 668428852 | s-cassady7777@gmail.com       | 312-5221 Suspendisse Road           | 2022-06-07 |          80.00 |        32.98 | ES9000497005688677572472 |
+| 26029831H | Leila      | Casey Willis        | 2004-12-23     | 633332648 | leila.casey@gmail.com         | Ap #700-3482 Donec St.              | 2024-03-02 |          80.00 |        32.98 | ES2131839183005535437630 |
+| 26955057T | Brenna     | Cabrera Roberts     | 1928-01-02     | 652147024 | cabrera-brenna@gmail.com      | P.O. Box 318, 9543 Et Ave           | 2024-05-19 |          80.00 |        32.98 | ES3802351584332098009682 |
+| 29080475B | Gay        | Rosales Potter      | 2008-10-24     | 643148362 | g-rosales@gmail.com           | 979-5682 Elit, Ave                  | 2022-08-20 |          80.00 |        32.98 | ES9201825017714793582265 |
+| 29422114P | Katelyn    | Lucas Owen          | 1963-10-14     | 637998466 | klucas9939@gmail.com          | Ap #125-7934 Eros Road              | 2022-10-19 |          80.00 |        32.98 | ES4220807188806738224443 |
+| 29703290D | Oleg       | Bradford Mercer     | 1993-09-16     | 686538884 | b-oleg6899@gmail.com          | P.O. Box 527, 5564 Lectus. Rd.      | 2024-02-02 |          80.00 |        32.98 | ES5931836404248752598635 |
+| 29942540J | Jolie      | Stafford Patton     | 2000-11-01     | 688551683 | j.stafford@gmail.com          | 8045 Fusce Avenue                   | 2022-11-20 |          80.00 |        32.98 | ES1802257423720036016624 |
+| 30273202G | Claire     | Wheeler Larson      | 1967-10-10     | 667356195 | c-wheeler@gmail.com           | Ap #874-2451 Gravida Rd.            | 2022-07-19 |          80.00 |        32.98 | ES5021030054343432443042 |
+| 31916234P | Leandra    | Harvey Oliver       | 2006-04-01     | 658714467 | l.harvey@gmail.com            | Ap #302-415 Arcu. Avenue            | 2022-01-29 |          80.00 |        32.98 | ES2301989403431804447133 |
+| 32547625A | Zia        | Buchanan Boyd       | 1965-04-22     | 615222322 | b_zia3189@gmail.com           | Ap #268-3035 Nisl St.               | 2023-02-20 |          80.00 |        32.98 | ES1502394210211855649475 |
+| 33631038R | Selma      | Wiggins Mathis      | 1949-10-01     | 656812881 | wiggins-selma2140@gmail.com   | 734-7404 Velit. St.                 | 2022-09-07 |          80.00 |        32.98 | ES8402394462510638881101 |
+| 36452461Z | Serina     | Bush Bright         | 1941-03-17     | 665828866 | b.serina5691@gmail.com        | Ap #534-2965 Nam Road               | 2022-01-02 |          80.00 |        32.98 | ES8821030953117974582906 |
+| 37590422G | Glenna     | Beard Tate          | 1931-11-24     | 638206864 | b-glenna6049@gmail.com        | P.O. Box 570, 1424 Praesent St.     | 2022-05-07 |          80.00 |        32.98 | ES6600193222073431840160 |
+| 37717607E | Zachery    | Haley Fowler        | 1976-03-23     | 631718846 | h_zachery@gmail.com           | 8126 Habitant Avenue                | 2023-09-21 |          80.00 |        32.98 | ES0520802203132176885996 |
+| 38029861M | Jarrod     | Bailey Mcknight     | 1943-06-28     | 628081416 | bailey-jarrod2084@gmail.com   | P.O. Box 958, 4762 Sed Rd.          | 2022-05-30 |          80.00 |        32.98 | ES3120387378872874359657 |
+| 38776597T | Shelly     | Terry Mayo          | 1995-11-09     | 632173387 | terry.shelly@gmail.com        | 8792 Dui. Av.                       | 2023-08-26 |          80.00 |        32.98 | ES6100837814434021428744 |
+| 39734987A | Thane      | Rogers Horton       | 1977-05-27     | 654464195 | rogers_thane1734@gmail.com    | P.O. Box 726, 8422 Hendrerit Avenue | 2024-04-01 |          80.00 |        32.98 | ES4601821005370931719204 |
+| 40036099E | Shafira    | Banks James         | 1987-02-16     | 673867435 | bshafira5961@gmail.com        | 394-438 Amet Road                   | 2023-07-12 |          80.00 |        32.98 | ES2300785528480202484528 |
+| 41919033S | Jessica    | Johnston Osborne    | 1978-12-10     | 641168858 | jjohnston9534@gmail.com       | P.O. Box 133, 406 Proin Ave         | 2022-11-19 |          80.00 |        32.98 | ES2920951429972113683754 |
+| 41976274D | Mercedes   | Sears Gaines        | 1948-08-04     | 645146145 | m.sears9833@gmail.com         | 497-4955 Sed Ave                    | 2024-03-20 |          80.00 |        32.98 | ES7714903323154662626564 |
+| 44869080J | Dorian     | Fitzgerald House    | 1943-07-26     | 648952768 | fitzgerald_dorian9875@gmail.c | Ap #484-7186 Tortor, Ave            | 2023-04-14 |          80.00 |        32.98 | ES2702394241973442458546 |
+| 47201472K | Candice    | Thompson Woodward   | 1990-08-17     | 698543543 | c.thompson@gmail.com          | 640-5949 Vel Road                   | 2024-02-23 |          80.00 |        32.98 | ES2802415543902328420815 |
+| 52062716P | Alma       | Thompson Jensen     | 1975-05-26     | 663338282 | a-thompson@gmail.com          | Ap #288-4868 Nunc Av.               | 2024-02-08 |          80.00 |        32.98 | ES1902258091677457239469 |
+| 52901724E | Devin      | Curry Richardson    | 1968-01-27     | 601810464 | d-curry@gmail.com             | 3801 Tortor. Av.                    | 2023-09-14 |          80.00 |        32.98 | ES2900492867923325327345 |
+| 52984492J | John       | Ellison King        | 2005-12-25     | 680155345 | jellison@gmail.com            | 422-8145 Sed Rd.                    | 2024-03-10 |          80.00 |        32.98 | ES7900499213512583573030 |
+| 54199325D | Wynter     | Oliver Roach        | 1960-01-08     | 626952266 | wynter-oliver@gmail.com       | 789-9814 Ligula Rd.                 | 2023-01-29 |          80.00 |        32.98 | ES5600830084329277321754 |
+| 55361235M | Karyn      | Foster Peck         | 1979-09-04     | 647520297 | f.karyn@gmail.com             | P.O. Box 213, 8362 Velit. Av.       | 2023-03-14 |          80.00 |        32.98 | ES9320953168613832643832 |
+| 55421398T | Lareina    | Le Morrison         | 1989-07-27     | 666414279 | l.le5798@gmail.com            | 1162 Ipsum. Rd.                     | 2022-05-18 |          80.00 |        32.98 | ES2301252707132715720555 |
+| 55985225M | Emerson    | Finley Reed         | 1964-10-29     | 673723283 | e.finley4652@gmail.com        | P.O. Box 522, 4457 Metus Road       | 2022-09-03 |          80.00 |        32.98 | ES9102393797921438975297 |
+| 56923865S | Lynn       | Bruce Foley         | 1997-08-16     | 678288773 | b-lynn279@gmail.com           | 609-7905 Diam St.                   | 2024-03-23 |          80.00 |        32.98 | ES4314902625186704535791 |
+| 57457005S | Kane       | Schwartz Pierce     | 1926-06-30     | 646999556 | kane_schwartz1357@gmail.com   | Ap #211-5964 Sed Av.                | 2023-12-16 |          80.00 |        32.98 | ES0601982445183810286211 |
+| 64590852K | Yuri       | Turner Arnold       | 1963-01-29     | 677957045 | yuriturner7851@gmail.com      | 244-2944 Cras Avenue                | 2022-09-18 |          80.00 |        32.98 | ES7631839399251936885635 |
+| 64609871L | Kimberly   | Francis Lamb        | 1995-06-08     | 611721379 | kimberlyfrancis@gmail.com     | Ap #284-533 Enim Rd.                | 2022-02-02 |          80.00 |        32.98 | ES5402344943968792954862 |
+| 65099652S | Medge      | Vega Walters        | 1993-03-17     | 692855251 | vegamedge5585@gmail.com       | P.O. Box 190, 9186 Fringilla Street | 2022-09-09 |          80.00 |        32.98 | ES7702352544673799955652 |
+| 65169708J | Kyra       | Huff Newman         | 2002-03-07     | 658434121 | k_huff7864@gmail.com          | P.O. Box 750, 3405 Eu Avenue        | 2022-10-14 |          80.00 |        32.98 | ES1401881339172036528741 |
+| 65171600L | Faith      | Hayden Hays         | 1960-05-02     | 621817338 | haydenfaith3015@gmail.com     | 474-8703 Urna, Rd.                  | 2023-11-12 |          80.00 |        32.98 | ES7421037242719369752485 |
+| 65725288M | Caesar     | Holman Ewing        | 1969-05-07     | 644385285 | hcaesar6546@gmail.com         | Ap #639-8597 Ut St.                 | 2024-03-08 |          80.00 |        32.98 | ES3800192797060450578991 |
+| 66294013D | Fletcher   | Maldonado Christian | 1975-04-05     | 630313649 | fmaldonado@gmail.com          | Ap #866-1693 Ultrices Rd.           | 2022-07-26 |          80.00 |        32.98 | ES3302255768619942136179 |
+| 67088071S | Stacey     | Ware Avery          | 1957-03-03     | 602819480 | s-ware3137@gmail.com          | P.O. Box 664, 7600 Pede, St.        | 2023-01-16 |          80.00 |        32.98 | ES7201388484233978738127 |
+| 67711844M | Isabella   | Dunn Griffin        | 1976-12-25     | 637573845 | idunn1041@gmail.com           | 5643 Ac, Av.                        | 2023-02-14 |          80.00 |        32.98 | ES9620858005990370693398 |
+| 68391900C | Dillon     | Mullins Prince      | 1953-10-17     | 661745272 | d-mullins@gmail.com           | Ap #979-2731 Nunc Road              | 2022-02-04 |          80.00 |        32.98 | ES4600194374181280933869 |
+| 69479828W | Derek      | Leonard Potter      | 1978-04-15     | 661913688 | leonardderek@gmail.com        | 6179 Proin Av.                      | 2023-11-17 |          80.00 |        32.98 | ES0821038401239330705336 |
+| 69844646V | Ulric      | Lynch Nieves        | 1952-09-10     | 688586714 | u-lynch@gmail.com             | 5110 Quisque St.                    | 2023-12-11 |          80.00 |        32.98 | ES7401980876762041513506 |
+| 73073291Z | Carolyn    | Neal Avery          | 1924-08-29     | 652643747 | c_neal2451@gmail.com          | 3724 Ultricies Rd.                  | 2023-09-12 |          80.00 |        32.98 | ES2901867011735301432195 |
+| 74419246D | Joel       | Knight Randall      | 1993-01-05     | 688673652 | knight_joel@gmail.com         | 489-8238 Nulla St.                  | 2022-04-09 |          80.00 |        32.98 | ES3302395972200802330832 |
+| 75970717S | Honorato   | Mckinney Hughes     | 1946-10-30     | 644713541 | mckinney.honorato@gmail.com   | Ap #196-8306 Donec Avenue           | 2023-01-09 |          80.00 |        32.98 | ES4701880745197426460525 |
+| 77670477Y | Fitzgerald | Cooke Cobb          | 1933-11-03     | 684562264 | fcooke@gmail.com              | P.O. Box 841, 3286 Fusce Ave        | 2023-12-03 |          80.00 |        32.98 | ES6802256066382991989423 |
+| 78150820V | Maya       | Wise Cardenas       | 1998-09-22     | 615486494 | m-wise@gmail.com              | 718-7100 Vel St.                    | 2023-10-08 |          80.00 |        32.98 | ES2201889372194953677523 |
+| 79328090D | Nomlanga   | Hunt Mathis         | 1957-03-27     | 606284226 | hunt.nomlanga1229@gmail.com   | 781-5014 Integer Avenue             | 2022-09-09 |          80.00 |        32.98 | ES9400785168910720864330 |
+| 80207869S | Hedwig     | Dejesus Nunez       | 1956-02-08     | 666825322 | dhedwig@gmail.com             | 164-8397 Dapibus Rd.                | 2022-07-09 |          80.00 |        32.98 | ES0600495267217114711596 |
+| 80482715B | Alisa      | Sampson Juarez      | 2007-05-10     | 671553271 | a-sampson@gmail.com           | 352-6294 A St.                      | 2022-07-11 |          80.00 |        32.98 | ES2520385370822581928683 |
+| 81221692K | Orla       | Terry Murray        | 1927-02-21     | 655057818 | terryorla2178@gmail.com       | 468-2936 Sed Avenue                 | 2023-01-26 |          80.00 |        32.98 | ES6101824233971379528239 |
+| 81663628N | Alvin      | Stafford Morales    | 1977-12-24     | 670923381 | a_stafford4253@gmail.com      | 954 Mollis St.                      | 2023-05-22 |          80.00 |        32.98 | ES4102418851390731698208 |
+| 81835886T | Irene      | Wall Lloyd          | 1999-09-12     | 649082169 | wall.irene@gmail.com          | P.O. Box 898, 3836 Fringilla. Ave   | 2023-05-04 |          80.00 |        32.98 | ES3702397255135752999416 |
+| 82559537W | Troy       | Fuentes Padilla     | 1998-06-23     | 628142604 | fuentes.troy@gmail.com        | 253-8770 Integer Rd.                | 2022-02-23 |          80.00 |        32.98 | ES2600781436142749246290 |
+| 82654920G | Melodie    | Sargent Hunter      | 1947-06-30     | 669535543 | m_sargent3913@gmail.com       | 3004 Tellus. Rd.                    | 2023-06-27 |          80.00 |        32.98 | ES7720950791218276033066 |
+| 83462689J | Leilani    | Levy Holt           | 2005-04-30     | 634522262 | levy-leilani@gmail.com        | 481-2354 Odio. Road                 | 2024-03-19 |          80.00 |        32.98 | ES1200832265493533306447 |
+| 84796178P | Shelly     | Rocha Tanner        | 1956-02-04     | 678505536 | rocha_shelly5110@gmail.com    | P.O. Box 296, 6446 Scelerisque, St. | 2023-11-03 |          80.00 |        32.98 | ES7502358104359474005432 |
+| 85478130X | Jayme      | Waters Daugherty    | 1996-08-10     | 680241712 | w_jayme@gmail.com             | 144-7687 Sem Ave                    | 2022-03-03 |          80.00 |        32.98 | ES3920007417172649244876 |
+| 86196855P | Wyatt      | Petty Fry           | 1947-03-08     | 641675725 | w-petty@gmail.com             | Ap #397-5307 Donec Avenue           | 2022-02-03 |          80.00 |        32.98 | ES6214906958381885888797 |
+| 86483964P | Macey      | Waters Stanton      | 1993-03-20     | 635201136 | m_waters7178@gmail.com        | Ap #791-338 Ac Avenue               | 2024-05-02 |          80.00 |        32.98 | ES2831836582513262190120 |
+| 88428356A | Wanda      | Levine Barton       | 1968-06-28     | 663578236 | levine-wanda4979@gmail.com    | Ap #545-1187 Sagittis Avenue        | 2023-11-10 |          80.00 |        32.98 | ES7720858533129446182887 |
+| 90487658T | Amity      | Mooney Trevino      | 2008-01-20     | 648536619 | a_mooney@gmail.com            | Ap #842-2504 Lacus. Av.             | 2024-04-13 |          80.00 |        32.98 | ES1201380137415964691452 |
+| 94036518Y | Aline      | Pierce Roach        | 2003-08-21     | 665405867 | a.pierce4496@gmail.com        | 842-1114 Lorem, Street              | 2023-01-26 |          80.00 |        32.98 | ES8102375909111261717632 |
+| 96219578K | Brittany   | Moore Hudson        | 1991-07-07     | 691117847 | moore-brittany@gmail.com      | 745-2456 Aliquet Rd.                | 2022-11-20 |          80.00 |        32.98 | ES1200497808937538802262 |
+| 96514330M | Yardley    | English Ayers       | 1960-06-13     | 676378648 | englishyardley1557@gmail.com  | Ap #894-3839 Elit. Road             | 2023-03-22 |          80.00 |        32.98 | ES4220858538247056362542 |
+| 98605883F | Ferdinand  | Neal Mcbride        | 1934-05-11     | 659181420 | nealferdinand2949@gmail.com   | Ap #434-6512 Lacus, Avenue          | 2023-01-21 |          80.00 |        32.98 | ES5502168664534936221573 |
+| 99776218X | Richard    | Forbes Valencia     | 1956-01-24     | 665972555 | forbesrichard1472@gmail.com   | Ap #688-8251 Suspendisse Avenue     | 2023-08-15 |          80.00 |        32.98 | ES5520953893020509021005 |
+| X4046310N | Otto       | Wolfe Foley         | 1998-08-10     | 670770817 | ottowolfe5228@gmail.com       | P.O. Box 617, 5482 Sem, Street      | 2022-02-25 |          80.00 |        32.98 | ES0602414652317104372583 |
+| X4482664X | Mikayla    | Lewis Miranda       | 1951-04-24     | 678937370 | m.lewis@gmail.com             | Ap #817-7755 Sed Street             | 2022-09-04 |          80.00 |        32.98 | ES1002161011059345179203 |
+| X4917790E | Denise     | Wagner Patel        | 1953-01-07     | 630227828 | d-wagner8527@gmail.com        | Ap #840-233 Mauris St.              | 2022-07-14 |          80.00 |        32.98 | ES3301388666414257585902 |
+| X6491946N | Brianna    | Clayton Shepard     | 1999-02-23     | 666126411 | b_clayton6486@gmail.com       | Ap #578-6195 Sagittis. Ave          | 2022-08-21 |          80.00 |        32.98 | ES9601987644180601340107 |
+| X7570502Y | Jessamine  | Boyer Norris        | 1937-07-19     | 665749554 | jboyer@gmail.com              | Ap #385-9187 Enim St.               | 2023-07-31 |          80.00 |        32.98 | ES4420850245001214066558 |
+| X9548079C | Martin     | Merritt Stafford    | 1945-02-14     | 618635078 | merritt.martin@gmail.com      | 383-5855 Proin Ave                  | 2023-03-21 |          80.00 |        32.98 | ES6820801601573939504365 |
+| Y0384382C | Reuben     | Tate Maddox         | 1927-10-20     | 600134712 | treuben7056@gmail.com         | P.O. Box 877, 9570 Vestibulum, St.  | 2023-05-07 |          80.00 |        32.98 | ES9300111932260545835676 |
+| Y1849564X | Blossom    | Long Carter         | 1986-11-04     | 685266682 | l_blossom@gmail.com           | 451-9711 Gravida Road               | 2022-09-11 |          80.00 |        32.98 | ES9000490865679099300289 |
+| Y7109014G | Jenna      | Finley Farmer       | 1980-03-09     | 654548093 | j.finley@gmail.com            | P.O. Box 541, 5259 Velit. Rd.       | 2023-10-24 |          80.00 |        32.98 | ES1520858100150032391590 |
+| Y9618125E | Jaden      | Adkins Gardner      | 1985-04-01     | 664656680 | j.adkins8813@gmail.com        | Ap #459-969 Et, Street              | 2024-03-16 |          80.00 |        32.98 | ES5302161336911518504124 |
+| Y9707024A | Porter     | Baker Massey        | 1968-05-05     | 664185322 | p.baker4014@gmail.com         | Ap #733-6936 Nulla Ave              | 2022-10-27 |          80.00 |        32.98 | ES6302399732303969090631 |
+| Y9796916B | Kadeem     | Reese Flynn         | 2002-08-09     | 631151617 | k-reese7285@gmail.com         | Ap #417-6639 Nunc Rd.               | 2024-04-04 |          80.00 |        32.98 | ES8600615179916741824437 |
+| Z3967199A | Eric       | Mendez Bradley      | 1965-06-21     | 622145813 | e-mendez@gmail.com            | Ap #431-8205 Tincidunt St.          | 2023-09-01 |          80.00 |        32.98 | ES5501980562059048316969 |
+| Z5236296Y | Diana      | Manning Luna        | 1996-08-28     | 652351556 | mdiana@gmail.com              | P.O. Box 580, 5470 Habitant Street  | 2023-07-25 |          80.00 |        32.98 | ES7502390285963191077786 |
+| Z6578685T | Wyatt      | Caldwell Greene     | 1924-12-16     | 615610240 | wyatt_caldwell@gmail.com      | 818-118 Fusce Ave                   | 2022-06-02 |          80.00 |        32.98 | ES8900818959130340503205 |
+| Z6650879C | Daniel     | Downs Salas         | 1932-01-26     | 646236742 | ddowns@gmail.com              | P.O. Box 313, 6760 Eget St.         | 2024-03-06 |          80.00 |        32.98 | ES4102251138555896270267 |
++-----------+------------+---------------------+----------------+-----------+-------------------------------+-------------------------------------+------------+----------------+--------------+--------------------------+
+100 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Monitors;
++------------+-----------------+---------------------------------------------+
+| Id_monitor | DNI_treballador | Rol                                         |
++------------+-----------------+---------------------------------------------+
+|          1 | 05514189P       | Fa control dels vestuaris del gimnàs.       |
+|          2 | 06090311A       | Vigila les saunes.                          |
+|          3 | 07219390N       | Fa classes en el solàrium.                  |
+|          4 | 07875785X       | Vigila la securetat en les piscines         |
+|          5 | 08176925B       | Vigila i fa classes en la zona entrenament. |
+|          6 | 28816250X       | Fa classes en les sales.                    |
+|          7 | 30105661H       | Fa control dels vestuaris del gimnàs.       |
+|          8 | 31751799T       | Vigila les saunes.                          |
+|          9 | 33585098S       | Fa classes en el solàrium.                  |
+|         10 | 35597917N       | Fa classes en la piscina.                   |
+|         11 | 36612536D       | Vigila i fa classes en la zona entrenament. |
+|         12 | 36908345S       | Fa classes en les sales.                    |
+|         13 | 49354886Z       | Fa control dels vestuaris del gimnàs.       |
+|         14 | 49790137J       | Vigila les saunes.                          |
+|         15 | 52696384A       | Fa classes en el solàrium.                  |
+|         16 | 67874490H       | Fa classes en la piscina.                   |
+|         17 | 68324689S       | Vigila i fa classes en la zona entrenament. |
+|         18 | 77564026E       | Fa classes en les sales.                    |
+|         19 | 77753405L       | Fa control dels vestuaris del gimnàs.       |
+|         20 | 78571815C       | Vigila les saunes.                          |
+|         21 | 81311320H       | Fa classes en el solàrium.                  |
+|         22 | 82677449Q       | Vigila la securetat en les piscines.        |
++------------+-----------------+---------------------------------------------+
+22 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Tipus_maquina_estacions;
++------------+------------------------------+-------------+---------+---------+
+| Id_Maquina | tipus                        | Pes_maquina | Pes_max | Pes_min |
++------------+------------------------------+-------------+---------+---------+
+| B01-1      | Màquina de gemelos           |      100.00 |  120.00 |   10.00 |
+| B01-2      | Màquina de gemelos           |      100.00 |  120.00 |   10.00 |
+| B01-3      | Màquina de gemelos           |      100.00 |  120.00 |   10.00 |
+| B02-1      | Màquina d’hiperextensions    |       90.00 |   80.00 |    5.00 |
+| B02-2      | Màquina d’hiperextensions    |       90.00 |   80.00 |    5.00 |
+| B02-3      | Màquina d’hiperextensions    |       90.00 |   80.00 |    5.00 |
+| B12-1      | Màquina de quàdriceps        |      100.00 |  100.00 |    5.00 |
+| B12-2      | Màquina de quàdriceps        |      100.00 |  100.00 |    5.00 |
+| B12-3      | Màquina de quàdriceps        |      100.00 |  100.00 |    5.00 |
+| B22-1      | Màquina de glutis            |      140.00 |   60.00 |    5.00 |
+| B22-2      | Màquina de glutis            |      140.00 |   60.00 |    5.00 |
+| B22-3      | Màquina de glutis            |      140.00 |   60.00 |    5.00 |
+| B32-1      | Màquina d'abductors          |      130.00 |   60.00 |    5.00 |
+| B32-2      | Màquina d'abductors          |      130.00 |   60.00 |    5.00 |
+| B32-3      | Màquina d'abductors          |      130.00 |   60.00 |    5.00 |
+| B34-1      | Màquina d'adductors          |      130.00 |   60.00 |    5.00 |
+| B34-2      | Màquina d'adductors          |      130.00 |   60.00 |    5.00 |
+| B34-3      | Màquina d'adductors          |      130.00 |   60.00 |    5.00 |
+| B96-1      | Premsa de cames              |      215.00 |  200.00 |   15.00 |
+| B96-2      | Premsa de cames              |      215.00 |  200.00 |   15.00 |
+| B96-3      | Premsa de cames              |      215.00 |  200.00 |   15.00 |
+| B98-1      | Màquina de femorals          |      110.00 |  100.00 |    5.00 |
+| B98-2      | Màquina de femorals          |      110.00 |  100.00 |    5.00 |
+| B98-3      | Màquina de femorals          |      110.00 |  100.00 |    5.00 |
+| C12-1      | Pesos lliures                |        0.00 |   60.00 |    2.50 |
+| C12-2      | Pesos lliures                |        0.00 |   60.00 |    2.50 |
+| C12-3      | Pesos lliures                |        0.00 |   60.00 |    2.50 |
+| C22-1      | Estació de pes mort          |      300.00 |  250.00 |   15.00 |
+| C22-2      | Estació de pes mort          |      300.00 |  250.00 |   15.00 |
+| C22-3      | Estació de pes mort          |      300.00 |  250.00 |   15.00 |
+| C88-1      | Banc de pes lliure           |        0.00 |   60.00 |    2.00 |
+| C88-2      | Banc de pes lliure           |        0.00 |   60.00 |    2.00 |
+| C88-3      | Banc de pes lliure           |        0.00 |   60.00 |    2.00 |
+| D01-1      | Màquina de dorsals           |      130.00 |   80.00 |    5.00 |
+| D01-2      | Màquina de dorsals           |      130.00 |   80.00 |    5.00 |
+| D01-3      | Màquina de dorsals           |      130.00 |   80.00 |    5.00 |
+| D23-1      | Màquina de deltoides         |      110.00 |   60.00 |    2.50 |
+| D23-2      | Màquina de deltoides         |      110.00 |   60.00 |    2.50 |
+| D23-3      | Màquina de deltoides         |      110.00 |   60.00 |    2.50 |
+| D33-1      | Màquina de tríceps           |       95.00 |   80.00 |    5.00 |
+| D33-2      | Màquina de tríceps           |       95.00 |   80.00 |    5.00 |
+| D33-3      | Màquina de tríceps           |       95.00 |   80.00 |    5.00 |
+| D43-1      | Màquina de pectorals         |      120.00 |   80.00 |    5.00 |
+| D43-2      | Màquina de pectorals         |      120.00 |   80.00 |    5.00 |
+| D43-3      | Màquina de pectorals         |      120.00 |   80.00 |    5.00 |
+| D44-1      | Màquina de panxes            |       50.00 |   60.00 |    5.00 |
+| D44-2      | Màquina de panxes            |       50.00 |   60.00 |    5.00 |
+| D44-3      | Màquina de panxes            |       50.00 |   60.00 |    5.00 |
+| D98-1      | Màquina de bíceps            |       90.00 |   80.00 |    5.00 |
+| D98-2      | Màquina de bíceps            |       90.00 |   80.00 |    5.00 |
+| D98-3      | Màquina de bíceps            |       90.00 |   80.00 |    5.00 |
+| E12-1      | Estació multifunció          |      250.00 |  100.00 |    5.00 |
+| E12-2      | Estació multifunció          |      250.00 |  100.00 |    5.00 |
+| E12-3      | Estació multifunció          |      250.00 |  100.00 |    5.00 |
+| E99-1      | Màquina de refrigeració      |       60.00 |    0.00 |    0.00 |
+| E99-2      | Màquina de refrigeració      |       60.00 |    0.00 |    0.00 |
+| E99-3      | Màquina de refrigeració      |       60.00 |    0.00 |    0.00 |
+| F09-1      | Màquina de flexions          |       20.00 |    0.00 |    0.00 |
+| F09-2      | Màquina de flexions          |       20.00 |    0.00 |    0.00 |
+| F09-3      | Màquina de flexions          |       20.00 |    0.00 |    0.00 |
+| F12-1      | Màquina de escalfament       |       40.00 |    0.00 |    0.00 |
+| F12-2      | Màquina de escalfament       |       40.00 |    0.00 |    0.00 |
+| F12-3      | Màquina de escalfament       |       40.00 |    0.00 |    0.00 |
+| F69-1      | Corda per escalar            |        4.00 |    0.00 |    0.00 |
+| F69-2      | Corda per escalar            |        4.00 |    0.00 |    0.00 |
+| F69-3      | Corda per escalar            |        4.00 |    0.00 |    0.00 |
+| F77-1      | Màquina de boxa              |        8.00 |    0.00 |    0.00 |
+| F77-2      | Màquina de boxa              |        8.00 |    0.00 |    0.00 |
+| F77-3      | Màquina de boxa              |        8.00 |    0.00 |    0.00 |
+| G04-1      | Escaladora Operativa         |       70.00 |    0.00 |    0.00 |
+| G04-2      | Escaladora Operativa         |       70.00 |    0.00 |    0.00 |
+| G04-3      | Escaladora Operativa         |       70.00 |    0.00 |    0.00 |
+| G05-1      | Màquina de crossfit          |       30.00 |    0.00 |    0.00 |
+| G05-2      | Màquina de crossfit          |       30.00 |    0.00 |    0.00 |
+| G05-3      | Màquina de crossfit          |       30.00 |    0.00 |    0.00 |
+| G07-1      | Máquina de rem               |       22.00 |    0.00 |    0.00 |
+| G07-2      | Máquina de rem               |       22.00 |    0.00 |    0.00 |
+| G07-3      | Máquina de rem               |       22.00 |    0.00 |    0.00 |
+| G32-1      | El·líptica                   |       25.00 |    0.00 |    0.00 |
+| G32-2      | El·líptica                   |       25.00 |    0.00 |    0.00 |
+| G32-3      | El·líptica                   |       25.00 |    0.00 |    0.00 |
+| G69-1      | Cinta de córrer              |       60.00 |    0.00 |    0.00 |
+| G69-2      | Cinta de córrer              |       60.00 |    0.00 |    0.00 |
+| G69-3      | Cinta de córrer              |       60.00 |    0.00 |    0.00 |
+| G74-1      | Cinta de marxa               |       30.00 |    0.00 |    0.00 |
+| G74-2      | Cinta de marxa               |       30.00 |    0.00 |    0.00 |
+| G74-3      | Cinta de marxa               |       30.00 |    0.00 |    0.00 |
+| G79-1      | Bicicleta estàtica           |       19.00 |    0.00 |    0.00 |
+| G79-2      | Bicicleta estàtica           |       19.00 |    0.00 |    0.00 |
+| G79-3      | Bicicleta estàtica           |       19.00 |    0.00 |    0.00 |
+| G99-1      | Màquina de resistència       |       90.00 |    0.00 |    0.00 |
+| G99-2      | Màquina de resistència       |       90.00 |    0.00 |    0.00 |
+| G99-3      | Màquina de resistència       |       90.00 |    0.00 |    0.00 |
++------------+------------------------------+-------------+---------+---------+
+93 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Treballadors;
++-----------------+-----------+------------------+----------------+-----------+-------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+| DNI_treballador | Nom       | Cognom           | Data_Naixement | tlf       | Correu                        | Estudis                                                                                                               | Salari  |
++-----------------+-----------+------------------+----------------+-----------+-------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+| 05514189P       | Liberty   | Ellis Middleton  | 2005-09-02     | 671447812 | liberty_ellis@gmail.com       | Entrenador en suspensió expert en TRX i sistemes similars per al desenvolupament de força i estabilitat.              | 1017.16 |
+| 06090311A       | Fuller    | Evans Rowland    | 1958-11-25     | 677248531 | fuller-evans390@gmail.com     | Nutricionista esportiva amb especialització en alimentació per al rendiment esportiu.                                 | 1200.97 |
+| 07219390N       | Adele     | Burgess Spencer  | 1998-04-12     | 649768836 | adele.burgess5354@gmail.com   | Fisioterapeuta especialitzada en rehabilitació i prevenció de lesions.                                                | 1073.37 |
+| 07875785X       | Avye      | Hewitt Brady     | 1990-06-25     | 693132978 | a-hewitt@gmail.com            | Entrenador d'alt rendiment amb formació en ciències de l'esport i certificacions en entrenament funcional.            | 1203.95 |
+| 08176925B       | Iliana    | Fitzgerald Lewis | 1980-02-27     | 633264768 | fitzgeraldiliana@gmail.com    | Coach d'entrenament funcional a l'aire lliure motivador i inspirador.                                                 | 1359.65 |
+| 28816250X       | Emi       | Huff Byers       | 1991-04-22     | 613437956 | e.huff@gmail.com              | Entrenadora de dansa i moviment professional amb experiència en expressió artística i fitness.                        | 1306.41 |
+| 30105661H       | Tobias    | Hubbard Hull     | 1985-04-24     | 612179716 | h-tobias@gmail.com            | Entrenadora especialitzada en flexibilitat i mobilitat amb experiència en ioga i estiraments terapèutics.             | 1013.07 |
+| 31751799T       | Rama      | Nelson Good      | 1997-09-07     | 656064335 | r-nelson6178@gmail.com        | Nutricionista esportiva especialitzada en planificació de menús i suplementació per al rendiment.                     | 1026.14 |
+| 33585098S       | Marvin    | Rosales Coffey   | 1960-04-15     | 682682104 | m-rosales@gmail.com           | Instructora de Zumba i ball fitness amb energia positiva i passió per la música i el moviment.                        | 1091.47 |
+| 35597917N       | Steven    | Norris Porter    | 1968-09-16     | 602066146 | norris-steven9467@gmail.com   | Entrenador de pilates amb formació en anatomia i fisiologia centrat en el reforç del nucli i l'alineació postural.    | 1378.96 |
+| 36612536D       | Christen  | Meyers Lamb      | 1976-06-05     | 681414474 | meyers.christen8273@gmail.com | Entrenador d'alta intensitat enfocat en exercicis de cos complet i entrenament metabòlic.                             | 1300.37 |
+| 36908345S       | Marny     | Hickman Hayden   | 1968-10-22     | 645350473 | hickman.marny@gmail.com       | Entrenador de CrossFit amb experiència en levantament de peses i exercicis d'alta intensitat.                         | 1364.97 |
+| 49354886Z       | Mariko    | Cross Baird      | 1988-07-27     | 645711883 | m.cross1083@gmail.com         | Entrenadora d'alta intensitat centrada en intervals d'alta intensitat i levantament de peses.                         | 1043.72 |
+| 49790137J       | Peter     | Estrada Wilcox   | 1997-09-27     | 621542456 | p-estrada6328@gmail.com       | Entrenadora apassionada pel cardio i el fitness cardiovascular amb enfocament en intervals d'alta intensitat.         | 1003.73 |
+| 52696384A       | Mary      | Nicholson Meyers | 1958-10-12     | 679436367 | m-nicholson9790@gmail.com     | Fisioterapeuta expert en rehabilitació física amb un enfocament holístic i atenció personalitzada.                    | 1327.45 |
+| 67874490H       | Dean      | Lowe Shaffer     | 1960-10-04     | 646757471 | d_lowe@gmail.com              | Entrenador especialitzat en millorar la resistència cardiovascular i muscular.                                        | 1306.09 |
+| 68324689S       | Walter    | Durham Marsh     | 1979-12-04     | 663666382 | w_durham@gmail.com            | Entrenador de boxa amb experiència en competició enfocat en tècnica,  resistència i agilitat.                         | 1108.07 |
+| 77564026E       | Nolan     | Willis Ware      | 1977-04-18     | 643513438 | nolanwillis3025@gmail.com     | Entrenador especialitzat en condicionament físic per a adolescents.                                                   | 1062.12 |
+| 77753405L       | Yoshi     | Clayton Mcgowan  | 1990-11-11     | 684336815 | c.yoshi@gmail.com             | Entrenador d'entrenament funcional expert en moviments naturals i funcionals.                                         | 1426.35 |
+| 78571815C       | Ann       | Todd Cobb        | 1972-01-02     | 686243336 | anntodd2615@gmail.com         | Coach de fitness holístic amb formació en nutrició i entrenament personalitzat per al benestar integral.              | 1185.42 |
+| 81311320H       | Sandra    | Berg Crosby      | 1963-11-27     | 625816446 | b.sandra@gmail.com            | Instructor de ioga i meditació certificat amb un enfocament en la connexió ment-cos.                                  | 1088.03 |
+| 82677449Q       | Reagan    | Gonzalez Burks   | 1994-09-10     | 656992040 | r.gonzalez8172@gmail.com      | Instructora de ioga certificada amb experiència en diverses modalitats de ioga.                                       | 1323.92 |
+| 84605514Z       | Geraldine | Adams Cash       | 1977-04-13     | 615548543 | g-adams7558@gmail.com         | Entrenador en escalada expert en tècniques i força de agarre per a escalada indoor i outdoor.                         | 1035.48 |
+| 86989486J       | Vincent   | Bean Cooke       | 1999-03-03     | 677646552 | bean-vincent@gmail.com        | Massatgista terapèutic especialitzat en tècniques de massatge esportiu i rehabilitació.                               | 1085.64 |
+| 87250359C       | Kitra     | Nguyen Chang     | 1976-07-03     | 611347335 | kitra-nguyen5483@gmail.com    | Entrenador d'entrenament en circuit especialitzat en disseny de programes eficients i efectius.                       | 1321.75 |
+| 91354962C       | Wade      | Davis Velazquez  | 2003-05-28     | 696688671 | dwade5737@gmail.com           | Entrenador de força expert en levantament de peses i progressió d'entrenament.                                        | 1031.84 |
+| 92348206D       | Xenos     | Rodgers Delacruz | 2002-03-09     | 639575266 | rxenos@gmail.com              | Coach de mentalitat i motivació que ajuda a superar barreres mentals.                                                 | 1073.95 |
+| 95379746B       | Elvis     | Randolph Howard  | 2004-04-29     | 666480717 | e_randolph@gmail.com          | Entrenadora especialista en resistència i força                                                                       | 1274.23 |
++-----------------+-----------+------------------+----------------+-----------+-------------------------------+-----------------------------------------------------------------------------------------------------------------------+---------+
+28 rows in set (0,01 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Treballadors_Zones;
++---------+-----------------+
+| Id_zona | DNI_treballador |
++---------+-----------------+
+|       1 | 05514189P       |
+|       1 | 30105661H       |
+|       1 | 49354886Z       |
+|       1 | 77753405L       |
+|       2 | 06090311A       |
+|       2 | 31751799T       |
+|       2 | 49790137J       |
+|       2 | 78571815C       |
+|       3 | 07219390N       |
+|       3 | 33585098S       |
+|       3 | 52696384A       |
+|       3 | 81311320H       |
+|       4 | 07875785X       |
+|       4 | 35597917N       |
+|       4 | 67874490H       |
+|       4 | 82677449Q       |
+|       5 | 08176925B       |
+|       5 | 36612536D       |
+|       5 | 68324689S       |
+|       6 | 28816250X       |
+|       6 | 36908345S       |
+|       6 | 77564026E       |
++---------+-----------------+
+22 rows in set (0,00 sec)
+
+------------------------------------------------------------------------
+mysql:[root:gym_emecanotdo]> Select * from Zones;
++---------+-----------------+-----------------------------------------------------------------------------------+
+| Id_zona | Zona_instalacio | Descripcio                                                                        |
++---------+-----------------+-----------------------------------------------------------------------------------+
+|       1 | Vestuaris       | Espai personal i privat a on els clients es poden dutxar o canviar-se de roba.    |
+|       2 | Saunes          | Els abonats poden gaudir d’altes temperatures en aquest lloc.                     |
+|       3 | Solàrium        | Els clients es poden relaxar prenent el sol.                                      |
+|       4 | Piscines        | Espai obert a on els clients poden nadar lliurament o fer alguna classe dirigida. |
+|       5 | Entrenament     | Espai obert amb màquines per entrenar.                                            |
+|       6 | Sales           | Petites habitacions a on es poden fer classes dirigides.                          |
++---------+-----------------+-----------------------------------------------------------------------------------+
+6 rows in set (0,01 sec)
