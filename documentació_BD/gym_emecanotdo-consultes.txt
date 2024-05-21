@@ -1,0 +1,112 @@
+Consultes multitaules:
+
+1. Mostrar els detalls dels treballadors assignats a cada zona del gimnàs, incluyent el seu nom complet i la zona en qüestió.
+
+mysql:[root:gym_emecanotdo]> SELECT tz.Id_zona, z.Descripcio AS Descripcion_Zona, t.Nom, t.Cognom FROM Treballadors_Zones tz LEFT JOIN Zones z ON tz.Id_zona = z.Zona_instalacio LEFT JOIN Treballadors t ON tz.DNI_treballador = t.DNI_treballador;
++---------+-----------------------------------------------------------------------------------+----------+------------------+
+| Id_zona | Descripcion_Zona                                                                  | Nom      | Cognom           |
++---------+-----------------------------------------------------------------------------------+----------+------------------+
+|       1 | Espai personal i privat a on els clients es poden dutxar o canviar-se de roba.    | Liberty  | Ellis Middleton  |
+|       1 | Espai personal i privat a on els clients es poden dutxar o canviar-se de roba.    | Tobias   | Hubbard Hull     |
+|       1 | Espai personal i privat a on els clients es poden dutxar o canviar-se de roba.    | Mariko   | Cross Baird      |
+|       1 | Espai personal i privat a on els clients es poden dutxar o canviar-se de roba.    | Yoshi    | Clayton Mcgowan  |
+|       2 | Els abonats poden gaudir d’altes temperatures en aquest lloc.                     | Fuller   | Evans Rowland    |
+|       2 | Els abonats poden gaudir d’altes temperatures en aquest lloc.                     | Rama     | Nelson Good      |
+|       2 | Els abonats poden gaudir d’altes temperatures en aquest lloc.                     | Peter    | Estrada Wilcox   |
+|       2 | Els abonats poden gaudir d’altes temperatures en aquest lloc.                     | Ann      | Todd Cobb        |
+|       3 | Els clients es poden relaxar prenent el sol.                                      | Adele    | Burgess Spencer  |
+|       3 | Els clients es poden relaxar prenent el sol.                                      | Marvin   | Rosales Coffey   |
+|       3 | Els clients es poden relaxar prenent el sol.                                      | Mary     | Nicholson Meyers |
+|       3 | Els clients es poden relaxar prenent el sol.                                      | Sandra   | Berg Crosby      |
+|       4 | Espai obert a on els clients poden nadar lliurament o fer alguna classe dirigida. | Avye     | Hewitt Brady     |
+|       4 | Espai obert a on els clients poden nadar lliurament o fer alguna classe dirigida. | Steven   | Norris Porter    |
+|       4 | Espai obert a on els clients poden nadar lliurament o fer alguna classe dirigida. | Dean     | Lowe Shaffer     |
+|       4 | Espai obert a on els clients poden nadar lliurament o fer alguna classe dirigida. | Reagan   | Gonzalez Burks   |
+|       5 | Espai obert amb màquines per entrenar.                                            | Iliana   | Fitzgerald Lewis |
+|       5 | Espai obert amb màquines per entrenar.                                            | Christen | Meyers Lamb      |
+|       5 | Espai obert amb màquines per entrenar.                                            | Walter   | Durham Marsh     |
+|       6 | Petites habitacions a on es poden fer classes dirigides.                          | Emi      | Huff Byers       |
+|       6 | Petites habitacions a on es poden fer classes dirigides.                          | Marny    | Hickman Hayden   |
+|       6 | Petites habitacions a on es poden fer classes dirigides.                          | Nolan    | Willis Ware      |
++---------+-----------------------------------------------------------------------------------+----------+------------------+
+22 rows in set (0,00 sec)
+
+2. Obtén el nombre de clients que estàn apuntats en classes dirigides en cada espai del gimnàs, mostrant el nom de l'espai i la quantitat de clients, ordenats de major a menor segons la quantitat de clients.
+
+mysql:[root:gym_emecanotdo]> SELECT E.Descripcio AS Espacio, COUNT(CC.DNI_client) AS Num_Clientes FROM Client_Classe CC JOIN Classes_Dirigides CD ON CC.Id_classe = CD.Id_classe JOIN Espais E ON CD.Id_espai = E.Id_espai GROUP BY E.Descripcio ORDER BY Num_Clientes DESC;
++---------------------------------------------------+--------------+
+| Espacio                                           | Num_Clientes |
++---------------------------------------------------+--------------+
+| Solàrium de l’est del gimnàs.                     |           52 |
+| Solàrium de l’oest del gimnàs.                    |           48 |
+| Piscina petita per tot el públic.                 |           24 |
+| Piscina gran número 2.                            |           19 |
+| Espai cerrat número 1 per fer classes dirigides.  |           18 |
+| Espai cerrat número 3 per fer classes dirigides.  |           15 |
+| Espai cerrat número 4 per fer classes dirigides.  |           15 |
+| Espai cerrat número 5 per fer classes dirigides.  |           14 |
+| Espai cerrat número 2 per fer classes dirigides.  |           10 |
+| Piscina gran número 1.                            |            7 |
++---------------------------------------------------+--------------+
+10 rows in set (0,00 sec)
+
+Consultes subtaula:
+
+1. Obtén el nom i el salari de tots els treballadors que tenen un salari superior a la media de tots els treballadors.
+
+mysql:[root:gym_emecanotdo]> SELECT Nom, Cognom, Salari FROM Treballadors WHERE Salari > (SELECT AVG(Salari) FROM Treballadors);
++-----------+------------------+---------+
+| Nom       | Cognom           | Salari  |
++-----------+------------------+---------+
+| Fuller    | Evans Rowland    | 1400.01 |
+| Adele     | Burgess Spencer  | 1233.92 |
+| Avye      | Hewitt Brady     | 1409.58 |
+| Emi       | Huff Byers       | 1221.98 |
+| Marny     | Hickman Hayden   | 1364.39 |
+| Walter    | Durham Marsh     | 1384.46 |
+| Nolan     | Willis Ware      | 1292.20 |
+| Yoshi     | Clayton Mcgowan  | 1307.60 |
+| Ann       | Todd Cobb        | 1221.39 |
+| Reagan    | Gonzalez Burks   | 1256.62 |
+| Geraldine | Adams Cash       | 1290.63 |
+| Vincent   | Bean Cooke       | 1243.30 |
+| Kitra     | Nguyen Chang     | 1344.60 |
+| Xenos     | Rodgers Delacruz | 1411.80 |
+| Elvis     | Randolph Howard  | 1399.61 |
++-----------+------------------+---------+
+15 rows in set (0,00 sec)
+
+2. Mostra els identificadors de les màquines que tinguin un pes màxim superior a 100 kg i estàn operatives.
+
+mysql:[root:gym_emecanotdo]> SELECT t.Id_Maquina, t.Pes_max FROM Tipus_maquina_estacions t WHERE t.Pes_max > 100 AND t.Id_Maquina IN (SELECT m.Id_Maquina FROM Maquina_estacions m WHERE m.Estat = 'Operativa');
++------------+---------+
+| Id_Maquina | Pes_max |
++------------+---------+
+| B01-1      |  120.00 |
+| B01-2      |  120.00 |
+| B01-3      |  120.00 |
+| B96-1      |  200.00 |
+| B96-3      |  200.00 |
+| C22-1      |  250.00 |
+| C22-3      |  250.00 |
++------------+---------+
+7 rows in set (0,00 sec)
+
+3. Indica quantes classes dirigides dona cada monitor.
+
+mysql:[root:gym_emecanotdo]> SELECT Id_monitor, (SELECT COUNT(*) FROM Classes_Dirigides AS cd WHERE cd.Id_monitor = m.Id_monitor) AS Num_clases_dirigidas FROM (SELECT DISTINCT Id_monitor FROM Classes_Dirigides) AS m;
++------------+----------------------+
+| Id_monitor | Num_clases_dirigidas |
++------------+----------------------+
+|          3 |                    5 |
+|          6 |                    5 |
+|          9 |                    5 |
+|         10 |                    5 |
+|         12 |                    5 |
+|         15 |                    5 |
+|         16 |                    5 |
+|         18 |                    5 |
+|         21 |                    5 |
++------------+----------------------+
+9 rows in set (0,00 sec)
+
